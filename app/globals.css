@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-ink antialiased;
+}
+
+/* Soft cloud shapes floating behind the hero, like the reference theme */
+.clouds::before,
+.clouds::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(48px);
+  opacity: 0.75;
+  pointer-events: none;
+}
+.clouds::before {
+  width: 420px;
+  height: 160px;
+  background: #ffffff;
+  top: 8%;
+  left: -6%;
+}
+.clouds::after {
+  width: 520px;
+  height: 190px;
+  background: #ffffffcc;
+  top: 22%;
+  right: -8%;
+}
+
+/* Serif italic accent word used inside headlines */
+.accent-word {
+  @apply font-display italic font-medium;
+  letter-spacing: 0.01em;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-slate2;
+}
+.eyebrow::before {
+  content: "";
+  @apply h-1.5 w-1.5 rounded-full bg-[#6E93E0];
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
