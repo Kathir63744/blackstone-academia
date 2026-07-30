@@ -25,7 +25,7 @@ const tabs = [
     points: [
       "Define plans like Simple, Essential, Elite and Pro",
       "Set rescheduling & cancellation rights per package",
-      "Attach courses, session counts and pricing to each plan",
+      "Attach courses, session counts to each plan",
     ],
   },
   {
@@ -48,22 +48,6 @@ export default function Customization() {
   return (
     <section className="relative overflow-hidden px-4 py-11 md:py-14">
       <BackgroundAccent variant="grid" className="opacity-40" />
-        <Reveal className="text-center">
-          <span className="eyebrow">
-            Fully customizable
-          </span>
-          <h2 
-            className="mt-3 text-3xl leading-tight tracking-tight md:text-5xl"
-            style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
-          >
-            Every control, <span className="text-iris">your</span> rules
-          </h2>
-          <p className="mx-auto mt-4 mb-9 max-w-2xl text-sm text-slate2 md:text-base">
-            Blackstone Academia isn&apos;t one-size-fits-all. Admins can reshape roles,
-            packages, portals and workflows from the settings panel — no code,
-            no support tickets.
-          </p>
-        </Reveal>
       <Reveal className="mx-auto max-w-6xl rounded-2xl border border-white/80 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-shadow duration-500 hover:shadow-xl md:p-12">
         <div className="grid items-start gap-12 md:grid-cols-2">
           {/* Left Column */}
@@ -114,52 +98,51 @@ export default function Customization() {
             </div>
           </div>
 
-          {/* Right Column - Content Card */}
+          {/* Right Column - Fixed Height Content Card */}
           <div className="relative">
-            <div
-              key={current.key}
-              className="rounded-2xl bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 p-7 shadow-lg shadow-ink/5 transition-all duration-500 hover:shadow-xl md:p-9"
-            >
-              {/* Icon header */}
-              <div className="flex items-center gap-3">
-                <div className="rounded-xl bg-gradient-to-br from-iris/10 to-indigo-400/10 p-2.5">
-                  <current.icon className="h-6 w-6 text-iris" />
+            <div className="rounded-2xl bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 p-7 shadow-lg shadow-ink/5 transition-all duration-500 hover:shadow-xl md:p-9 h-[320px] flex flex-col overflow-hidden">
+              <div className="flex-1 flex flex-col">
+                {/* Icon header */}
+                <div className="flex items-center gap-3 flex-shrink-0">
+                  <div className="rounded-xl bg-gradient-to-br from-iris/10 to-indigo-400/10 p-2.5">
+                    <current.icon className="h-6 w-6 text-iris" />
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-ink">
+                    {current.title}
+                  </h3>
                 </div>
-                <h3 className="font-display text-xl font-semibold text-ink">
-                  {current.title}
-                </h3>
-              </div>
 
-              <div className="mt-6 h-px w-full bg-gradient-to-r from-iris/20 via-iris/40 to-iris/20" />
+                <div className="mt-6 h-px w-full bg-gradient-to-r from-iris/20 via-iris/40 to-iris/20 flex-shrink-0" />
 
-              <ul className="mt-6 space-y-4">
-                {current.points.map((p) => (
-                  <li 
-                    key={p} 
-                    className="group flex items-start gap-3 text-md leading-relaxed text-ink/80 transition-colors duration-200 hover:text-ink"
-                  >
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-gradient-to-r from-iris to-indigo-500 text-iris shadow-sm shadow-iris/30 transition-transform duration-300 group-hover:scale-110">
-                      <Check className="h-3 w-3" />
-                    </span>
-                    {p}
-                  </li>
-                ))}
-              </ul>
+                <ul className="mt-6 space-y-4 flex-1 overflow-y-auto">
+                  {current.points.map((p) => (
+                    <li 
+                      key={p} 
+                      className="group flex items-start gap-3 text-md leading-relaxed text-ink/80 transition-colors duration-200 hover:text-ink"
+                    >
+                      <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-gradient-to-r from-iris to-indigo-500 text-iris shadow-sm shadow-iris/30 transition-transform duration-300 group-hover:scale-110">
+                        <Check className="h-3 w-3" />
+                      </span>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
 
-              {/* Decorative gradient dots */}
-              <div className="mt-6 flex items-center gap-2 border-t border-ink/5 pt-5">
-                <span className="h-1.5 w-1.5 rounded-full bg-iris/50" />
-                <span className="h-1.5 w-1.5 rounded-full bg-iris/30" />
-                <span className="h-1.5 w-1.5 rounded-full bg-iris/15" />
-                <span className="ml-auto text-[10px] font-medium uppercase tracking-wider text-slate2">
-                  {active === "roles" && "Access control"}
-                  {active === "packages" && "Plan management"}
-                  {active === "branding" && "White-label"}
-                </span>
+                {/* Decorative gradient dots - fixed at bottom */}
+                <div className="mt-6 flex items-center gap-2 border-t border-ink/5 pt-5 flex-shrink-0">
+                  <span className="h-1.5 w-1.5 rounded-full bg-iris/50" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-iris/30" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-iris/15" />
+                  <span className="ml-auto text-[10px] font-medium uppercase tracking-wider text-slate2">
+                    {active === "roles" && "Access control"}
+                    {active === "packages" && "Plan management"}
+                    {active === "branding" && "White-label"}
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Decorative accent - positioned relative to the card */}
+            {/* Decorative accent */}
             <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-gradient-to-br from-iris/5 to-indigo-400/5 blur-2xl -z-10" />
           </div>
         </div>

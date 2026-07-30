@@ -4,26 +4,20 @@ import Reveal from "./Reveal";
 /** Compact page hero with real cloud photo background + pastel overlay */
 export default function PageHero({ eyebrow, title, subtitle, children }) {
   return (
-    <section className="relative overflow-hidden px-4 pb-12 pt-12 md:pt-16">
+    <section className="relative overflow-hidden px-4 pt-0 pb-8 md:pb-12">
       <div className="absolute inset-0 -z-10">
-        <img
-          src={IMAGES.skyClouds}
-          alt=""
-          aria-hidden="true"
-          className="h-full w-full object-cover"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-sky1/55 to-cream" />
+       
+        
       </div>
 
-      <Reveal eager as="div" className="relative mx-auto max-w-4xl text-center">
+      <Reveal eager as="div" className="relative mx-auto mt-6 max-w-4xl text-center md:mt-8">
         {eyebrow && (
           <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-slate2">
             {eyebrow}
           </p>
         )}
         <h1 
-          className="mx-auto mt-3 max-w-3xl text-4xl leading-[1.08] tracking-tight md:text-5xl"
+          className="mx-auto mt-3 max-w-3xl text-3xl leading-[1.08] tracking-tight md:text-4xl lg:text-5xl"
           style={{ 
             fontFamily: "'Onest', sans-serif", 
             fontWeight: 400,

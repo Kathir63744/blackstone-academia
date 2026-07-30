@@ -10,8 +10,12 @@ import Testimonials from "@/components/Testimonials";
 import DemoBooking from "@/components/DemoBooking";
 import Footer from "@/components/Footer";
 import Plans from "@/components/Plans";
+import JitsiFeatureSection from "@/components/JitsiFeatureSection";
+
 
 export default function Home() {
+
+  
   return (
     <main>
       <Navbar />
@@ -22,7 +26,7 @@ export default function Home() {
       <Customization />
       <HowItWorks />
       <Integrations />
-      <Plans />
+     <JitsiFeatureSection />
       <Testimonials />
       <DemoBooking />
       <Footer />

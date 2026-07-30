@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { FEATURES } from "@/lib/siteData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 
 /* Gradient hairline borders. Each card is a 1px gradient wrapper around a
    frosted surface — the edge catches light instead of sitting there as a
@@ -27,7 +28,7 @@ function Mesh() {
 
 export default function Features() {
   return (
-    <main className="relative bg-cream">
+    <main className="relative bg-sky1/5">
       <Navbar />
       <Mesh />
 
@@ -75,6 +76,26 @@ export default function Features() {
           {FEATURES.map((f, i) => {
             const edge = EDGES[i % EDGES.length];
             const peek = (f.capabilities ?? []).slice(0, 3);
+            
+            // Custom image positioning for specific modules - PULLED FURTHER DOWN
+            const getImagePosition = (slug) => {
+              const positions = {
+                "academic-coach-portal": "object-bottom object-[center_bottom]",
+                "supervisor-portal": "object-bottom object-[center_bottom]",
+                "teacher-portal": "object-center",
+                "student-portal": "object-center",
+                "admin-portal": "object-center",
+                "live-classes": "object-center",
+                "billing-finance": "object-center",
+                "assessments-rankings": "object-center",
+                "messaging": "object-center",
+                "analytics-reports": "object-center",
+                "security-compliance": "object-center",
+              };
+              return positions[slug] || "object-center";
+            };
+
+            const imagePosition = getImagePosition(f.slug);
 
             return (
               <Reveal
@@ -85,22 +106,26 @@ export default function Features() {
                 className={`group relative rounded-2xl bg-gradient-to-br p-px shadow-lift transition duration-300 hover:shadow-soft motion-safe:hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-iris focus-visible:ring-offset-4 focus-visible:ring-offset-cream ${edge}`}
               >
                 <div className="flex h-full flex-col overflow-hidden rounded-[inherit] bg-white/90 backdrop-blur-xl">
-                  {/* Image band */}
-                  <div className="relative h-40 w-full shrink-0 overflow-hidden">
-                    <img
-                      src={f.image}
-                      alt=""
-                      aria-hidden="true"
-                      className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      loading="lazy"
-                    />
+                  {/* Image band - Full fitted image with custom positioning */}
+                  <div className="relative w-full shrink-0 overflow-hidden" style={{ height: '200px' }}>
+                    <div className="absolute inset-0 overflow-hidden">
+                      <img
+                        src={f.image}
+                        alt={f.title}
+                        className={`w-full h-[150%] object-cover ${imagePosition}`}
+                        style={{
+                          transform: f.slug === "academic-coach-portal" || f.slug === "supervisor-portal" 
+                            ? 'translateY(0%)' 
+                            : 'translateY(0)'
+                        }}
+                        loading="lazy"
+                      />
+                    </div>
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent"
                     />
-                    <span className="absolute left-4 top-4 grid h-9 w-9 place-items-center rounded-xl bg-white/90 text-lg shadow-sm backdrop-blur">
-                      {f.icon}
-                    </span>
+                   
                     <span className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition duration-300 group-hover:bg-white group-hover:text-ink">
                       <ArrowUpRight className="h-4 w-4" />
                     </span>

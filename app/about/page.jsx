@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
 import { IMAGES } from "@/lib/siteData";
+import { ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "About — Blackstone Academia",
@@ -43,15 +43,66 @@ export default function AboutPage() {
     <main>
       <Navbar />
 
-      <PageHero
-        eyebrow="About us"
-        title="Built so academies can teach, not administrate"
-        subtitle="Blackstone Academia began inside a real online academy drowning in spreadsheets, WhatsApp threads and manual invoices. We rebuilt the whole operation as one platform — then made it available to every academy like it."
-      />
+      {/* Custom Hero Section - Starts from top edge */}
+      <section className="relative overflow-hidden px-4 pb-12 md:pb-16 -mt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-10">
+          <img
+            src={IMAGES.skyClouds}
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-sky1/55 to-cream" />
+        </div>
+
+        <div className="relative mx-auto max-w-4xl text-center pt-20 md:pt-28 lg:pt-32">
+          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur md:px-4 md:text-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
+            About Us
+          </span>
+
+          <h1 
+            className="mx-auto mt-4 max-w-3xl text-2xl leading-[1.08] tracking-tight text-ink sm:text-3xl md:text-4xl lg:text-5xl"
+            style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
+          >
+            Built so academies can <span className="text-iris">teach</span>, not administrate
+          </h1>
+
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate2 md:mt-4 md:text-[15px] lg:text-base">
+            Blackstone Academia began inside a real online academy drowning in spreadsheets, 
+            WhatsApp threads and manual invoices. We rebuilt the whole operation as one platform 
+            — then made it available to every academy like it.
+          </p>
+
+          {/* Trust Badge */}
+          <span className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur md:mt-6 md:px-4 md:py-2 md:text-xs">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            Trusted by 500+ academies worldwide
+          </span>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:mt-8 md:gap-4">
+            <Link
+              href="/book-demo"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-white shadow-lift transition hover:bg-iris motion-safe:hover:-translate-y-0.5 md:px-7 md:py-3.5 md:text-[15px]"
+            >
+              Book a free demo
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 md:h-4 md:w-4" />
+            </Link>
+            <Link
+              href="/features"
+              className="rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-medium text-ink transition hover:border-iris/40 hover:text-iris md:px-7 md:py-3.5 md:text-[15px]"
+            >
+              Explore features
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Story with image */}
       <section className="px-4 py-10 md:py-16">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-12 lg:grid-cols-2">
           <div className="overflow-hidden rounded-2xl border border-white/80 shadow-soft">
             <img
               src={IMAGES.classroom}
@@ -62,12 +113,12 @@ export default function AboutPage() {
           </div>
           <div>
             <h2 
-              className="text-3xl leading-[1.15] tracking-tight md:text-4xl"
+              className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
             >
               From chaos to one calm workspace
             </h2>
-            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate2 md:text-base">
+            <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate2 md:mt-6 md:space-y-4 md:text-[15px] lg:text-base">
               <p>
                 Online academies grow fast — and the tooling breaks first. A
                 trial student is booked over WhatsApp, scheduled in a
@@ -93,29 +144,33 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="px-4 py-14">
+      <section className="px-4 py-10 md:py-14">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-slate2 backdrop-blur md:px-4 md:text-[11px]">
+              <span className="h-1.5 w-1.5 rounded-full bg-iris" />
+              Our Values
+            </span>
             <h2 
-              className="text-3xl leading-[1.15] tracking-tight md:text-4xl"
+              className="mt-3 text-2xl leading-[1.15] tracking-tight md:mt-4 md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
             >
               What we believe
             </h2>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 md:mt-10 md:gap-5">
             {values.map((v) => (
               <article
                 key={v.title}
-                className="rounded-2xl border border-white/80 bg-white/80 p-7 shadow-lift backdrop-blur"
+                className="rounded-2xl border border-white/80 bg-white/80 p-5 shadow-lift backdrop-blur md:p-7"
               >
                 <h3 
-                  className="text-xl"
+                  className="text-lg md:text-xl"
                   style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
                 >
                   {v.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate2">{v.desc}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate2 md:mt-3">{v.desc}</p>
               </article>
             ))}
           </div>
@@ -123,31 +178,35 @@ export default function AboutPage() {
       </section>
 
       {/* Roles with team image */}
-      <section className="px-4 py-14">
-        <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-2">
+      <section className="px-4 py-10 md:py-14">
+        <div className="mx-auto grid max-w-6xl items-start gap-8 md:gap-12 lg:grid-cols-2">
           <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-slate2 backdrop-blur md:px-4 md:text-[11px]">
+              <span className="h-1.5 w-1.5 rounded-full bg-iris" />
+              Six Portals
+            </span>
             <h2 
-              className="text-3xl leading-[1.15] tracking-tight md:text-4xl"
+              className="mt-3 text-2xl leading-[1.15] tracking-tight md:mt-4 md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
             >
               Six portals, one platform
             </h2>
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-slate2 md:text-base">
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-slate2 md:mt-5 md:text-[15px] lg:text-base">
               Every person in your academy gets a portal shaped around their
               job — with permissions you control down to the module.
             </p>
-            <ul className="mt-7 space-y-4">
+            <ul className="mt-5 space-y-3 md:mt-7 md:space-y-4">
               {roles.map(([name, desc]) => (
-                <li key={name} className="flex items-start gap-3.5">
-                  <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-ink text-[10px] text-white">✓</span>
+                <li key={name} className="flex items-start gap-3">
+                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-ink text-[8px] text-white md:h-6 md:w-6 md:text-[10px]">✓</span>
                   <span>
                     <span 
-                      className="block text-[15px]"
+                      className="block text-sm md:text-[15px]"
                       style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
                     >
                       {name}
                     </span>
-                    <span className="block text-sm text-slate2">{desc}</span>
+                    <span className="block text-xs text-slate2 md:text-sm">{desc}</span>
                   </span>
                 </li>
               ))}
@@ -165,22 +224,22 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-4 py-16">
-        <div className="mx-auto max-w-4xl rounded-2xl bg-step-fade p-10 text-center shadow-soft md:p-14">
+      <section className="px-4 py-12 md:py-16">
+        <div className="mx-auto max-w-4xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
           <h2 
-            className="text-3xl leading-[1.15] tracking-tight md:text-4xl"
+            className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
             style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
           >
             See it working in 30 minutes
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-[15px] text-slate2 md:text-base">
+          <p className="mx-auto mt-3 max-w-lg text-sm text-slate2 md:mt-4 md:text-[15px] lg:text-base">
             Book a live walkthrough and we&apos;ll map the platform to how your
             academy runs today.
           </p>
           <Link
             href="/book-demo"
-            className="mt-8 inline-block rounded-full bg-ink px-8 py-4 text-base font-medium text-white shadow-lift transition hover:bg-ink/85"
-            style={{ fontFamily: "'Onest', sans-serif" }}
+            className="mt-5 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-white shadow-lift transition hover:bg-ink/85 md:mt-8 md:px-8 md:py-4 md:text-base"
+            style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
           >
             Book a free demo
           </Link>

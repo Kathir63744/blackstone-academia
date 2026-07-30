@@ -90,13 +90,7 @@ export default function HowItWorks() {
                   {s.desc}
                 </p>
 
-                {/* Step indicator */}
-                <div className="mt-5 flex items-center gap-2">
-                  <span className="h-1 w-8 rounded-full bg-iris/30 transition-all duration-300 group-hover:w-12 group-hover:bg-iris/60" />
-                  <span className="text-[10px] font-medium uppercase tracking-wider text-slate2/90">
-                    Step {i + 1}/3
-                  </span>
-                </div>
+               
               </Reveal>
             );
           })}

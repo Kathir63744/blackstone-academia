@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const links = [
   { label: "Home", href: "/" },
@@ -16,6 +17,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -23,6 +25,25 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Check if link is active
+  const isActive = (href) => {
+    // For hash links (/#how-it-works, /#testimonials) - active only when on home page
+    if (href.startsWith("/#")) {
+      return pathname === "/";
+    }
+    // For exact matches
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href;
+  };
+
+  // Check if any hash link should be active (for Home tab)
+  const isHomeActive = () => {
+    // Home tab is active when on home page OR when viewing hash sections
+    return pathname === "/" || links.some(l => l.href.startsWith("/#") && pathname === "/");
+  };
 
   return (
     <header id="top" className="sticky top-0 z-50 px-4 pt-4">
@@ -45,25 +66,37 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
-          {links.map((l) => (
-            <li key={l.label}>
-              <Link
-                href={l.href}
-                className="rounded-full px-4 py-2 text-[15px] font-medium text-slate2 transition hover:bg-mist hover:text-ink"
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
+          {links.map((l) => {
+            // Special case for Home - active when on home page or hash sections
+            let active = false;
+            if (l.href === "/") {
+              active = pathname === "/";
+            } else if (l.href.startsWith("/#")) {
+              // Hash links are never "active" in the tab sense - they just scroll
+              active = false;
+            } else {
+              active = pathname === l.href;
+            }
+            
+            return (
+              <li key={l.label}>
+                <Link
+                  href={l.href}
+                  className={`rounded-full px-4 py-2 text-[15px] font-medium transition-all duration-300 ${
+                    active
+                      ? "bg-gradient-to-r from-sky-300/50 via-sky-200/50 to-blue-300/50 text-ink shadow-sm backdrop-blur-sm border border-white/60"
+                      : "text-slate2 hover:bg-mist hover:text-ink"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Link
-            href="/book-demo"
-            className="rounded-full px-4 py-2 text-[15px] font-semibold text-ink transition hover:bg-mist"
-          >
-            Log in
-          </Link>
+          
           <Link
             href="/book-demo"
             className="rounded-full bg-ink px-6 py-2.5 text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:bg-ink/85 hover:shadow-lift"
@@ -84,16 +117,31 @@ export default function Navbar() {
 
       {open && (
         <div className="reveal reveal-visible mx-auto mt-2 max-w-6xl rounded-blob border border-white/70 bg-white/95 p-4 shadow-lift lg:hidden">
-          {links.map((l) => (
-            <Link
-              key={l.label}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block rounded-xl px-4 py-3 text-[15px] font-medium text-slate2 hover:bg-mist hover:text-ink"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            let active = false;
+            if (l.href === "/") {
+              active = pathname === "/";
+            } else if (l.href.startsWith("/#")) {
+              active = false;
+            } else {
+              active = pathname === l.href;
+            }
+            
+            return (
+              <Link
+                key={l.label}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className={`block rounded-xl px-4 py-3 text-[15px] font-medium transition-all duration-300 ${
+                  active
+                    ? "bg-gradient-to-r from-sky-300/50 via-sky-200/50 to-blue-300/50 text-ink shadow-sm backdrop-blur-sm border border-white/60"
+                    : "text-slate2 hover:bg-mist hover:text-ink"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
           <Link
             href="/book-demo"
             onClick={() => setOpen(false)}

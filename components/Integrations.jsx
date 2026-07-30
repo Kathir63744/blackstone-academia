@@ -22,10 +22,10 @@ const integrationGroups = [
     icon: Video,
     color: "from-blue-400 to-blue-600",
     images: [
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zoom.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftteams.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googlemeet.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/jitsi.svg",
+      "/icons8-zoom.svg",
+      "/icons8-microsoft-teams-2019-48.png",
+      "/icons8-google-meet.svg",
+      "/500px-Logo_Jitsi.svg.webp",
     ]
   },
   { 
@@ -34,9 +34,9 @@ const integrationGroups = [
     icon: CreditCard,
     color: "from-green-400 to-green-600",
     images: [
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/stripe.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/paypal.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/wise.svg",
+      "/icons8-stripe.svg",
+      "/icons8-paypal.svg",
+      "/icons8-wise.svg",
     ]
   },
   {
@@ -45,11 +45,11 @@ const integrationGroups = [
     icon: MessageSquare,
     color: "from-purple-400 to-purple-600",
     images: [
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoftoffice.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sharepoint.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/onedrive.svg",
-      "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/googledrive.svg",
+      "/icons8-whatsapp.svg",
+      "/icons8-office-365.svg",
+      "/icons8-sharepoint (1).svg",
+      "/icons8-onedrive (1).svg",
+      "/icons8-google-drive.svg",
     ]
   },
 ];

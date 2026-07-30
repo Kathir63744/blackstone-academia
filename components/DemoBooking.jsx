@@ -136,8 +136,8 @@ export default function DemoBooking() {
             </div>
           ) : (
             <div className="space-y-5">
-              {/* Row 1 — identity */}
-              <div className="grid gap-4 sm:grid-cols-2">
+              {/* Row 1 — 2 columns: Name + Email */}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className={label}>
                     <User className="h-3 w-3" />
@@ -167,8 +167,8 @@ export default function DemoBooking() {
                 </div>
               </div>
 
-              {/* Row 2 — academy context */}
-              <div className="grid gap-4 sm:grid-cols-[1.4fr_1fr]">
+              {/* Row 2 — 2 columns: Academy Name + Size */}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className={label}>
                     <Building className="h-3 w-3" />
@@ -187,21 +187,28 @@ export default function DemoBooking() {
                     <Users className="h-3 w-3" />
                     Academy size
                   </label>
-                  <select 
-                    className={`${inputCls("size")} appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2362728C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right:14px_center] bg-no-repeat pr-10`} 
-                    value={form.size} 
-                    onChange={update("size")}
-                  >
-                    <option>1–50 students</option>
-                    <option>51–200 students</option>
-                    <option>201–1,000 students</option>
-                    <option>1,000+ students</option>
-                  </select>
+                  <div className="relative">
+                    <select 
+                      className={`${inputCls("size")} appearance-none pr-12`} 
+                      value={form.size} 
+                      onChange={update("size")}
+                    >
+                      <option>1–50 students</option>
+                      <option>51–200 students</option>
+                      <option>201–1,000 students</option>
+                      <option>1,000+ students</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#62728C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Row 3 — scheduling */}
-              <div className="grid gap-4 sm:grid-cols-2">
+              {/* Row 3 — 2 columns: Date + Time */}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className={label}>
                     <Calendar className="h-3 w-3" />
@@ -220,19 +227,26 @@ export default function DemoBooking() {
                     <Clock className="h-3 w-3" />
                     Preferred time
                   </label>
-                  <select 
-                    className={`${inputCls("time")} appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2362728C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right:14px_center] bg-no-repeat pr-10`} 
-                    value={form.time} 
-                    onChange={update("time")}
-                  >
-                    <option>Morning (9am–12pm)</option>
-                    <option>Afternoon (12pm–4pm)</option>
-                    <option>Evening (4pm–8pm)</option>
-                  </select>
+                  <div className="relative">
+                    <select 
+                      className={`${inputCls("time")} appearance-none pr-12`} 
+                      value={form.time} 
+                      onChange={update("time")}
+                    >
+                      <option>Morning (9am–12pm)</option>
+                      <option>Afternoon (12pm–4pm)</option>
+                      <option>Evening (4pm–8pm)</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#62728C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Message */}
+              {/* Row 4 — Full width: Message */}
               <div>
                 <label className={label}>
                   <MessageSquare className="h-3 w-3" />

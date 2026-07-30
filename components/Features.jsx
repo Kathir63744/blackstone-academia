@@ -21,17 +21,12 @@ export default function Features() {
       <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-violet-400/5 blur-3xl" />
 
       <div className="mx-auto max-w-6xl">
-        {/* Heading — centered badge, tighter/safer type scale so nothing
-            overflows or wraps awkwardly on mobile */}
+        {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow  ">Our features</p>
+          <p className="eyebrow">Our features</p>
           <h2 className="mt-5 text-balance text-3xl font-light leading-[1.2] tracking-tight sm:text-4xl md:text-5xl">
-            Everything to{" "}
-      
-              run
-         
-            &{" "}
-            <span className=" bg-clip-text text-iris">
+            Everything to run &{" "}
+            <span className="bg-clip-text text-iris">
               grow
             </span>{" "}
             your academy
@@ -56,9 +51,7 @@ export default function Features() {
                 <div
                   className={`relative overflow-hidden bg-white shadow-lg transition-all duration-500 hover:shadow-2xl hover:shadow-iris/20 ${style}`}
                 >
-                  {/* Image — fills the box completely, corners inherit the
-                      card's own rounding via overflow-hidden on the parent
-                      (no separate clip-path, so no exposed background) */}
+                  {/* Image */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <img
                       src={f.image}
@@ -67,15 +60,14 @@ export default function Features() {
                       loading="lazy"
                     />
 
-                    {/* Legibility gradient for the badge */}
+                    {/* Legibility gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-30" />
 
-                    {/* Inside-out color reveal — pure opacity fade, so it
-                        never exposes anything behind the image */}
+                    {/* Inside-out color reveal */}
                     <div className="absolute inset-0 bg-gradient-to-br from-iris via-iris/90 to-violet-600 opacity-0 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-25" />
 
-                    {/* Index badge */}
-                    <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-sm font-bold text-iris backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-iris group-hover:text-white">
+                    {/* Index badge - Dark background with white text */}
+                    <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/70 text-sm font-bold text-white backdrop-blur-sm shadow-lg shadow-black/30 transition-all duration-500 group-hover:scale-110 group-hover:bg-iris group-hover:text-white">
                       {String(index + 1).padStart(2, "0")}
                     </div>
                   </div>
@@ -90,10 +82,11 @@ export default function Features() {
                       {f.summary}
                     </p>
 
-                    <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-iris/10 px-4 py-2 text-sm font-semibold text-iris transition-all duration-300 group-hover:gap-3 group-hover:bg-iris group-hover:px-5 group-hover:text-white">
-                      Explore
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
+                   {/* Explore button - Clean text only */}
+<span className="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-ink transition-all duration-300 group-hover:gap-3 group-hover:px-5 group-hover:text-ink/70">
+  Explore
+  <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+</span>
                   </div>
 
                   <div
