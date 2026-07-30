@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import Image from "next/image";
 
 const columns = [
   {
@@ -44,12 +45,17 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.4fr_2fr]">
           <div>
             <a href="#top" className="flex items-center gap-2 font-bold">
-              <span className="grid h-8 w-8 place-items-center rounded-full bg-ink font-display text-sm  text-white">
-                B
-              </span>
-              <span className="text-lg">
-                Blackstone <span className="accent-word">Academia</span>
-              </span>
+              {/* Image logo instead of text and round logo */}
+              <div className="relative h-8 w-auto">
+                <Image
+                  src="/logo.svg" // Replace with your actual logo path
+                  alt="Blackstone Academia Logo"
+                  width={120}
+                  height={32}
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate2">
               The all-in-one platform for online academies — classes, billing,

@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Features", href: "/features" },
+  { label: "Industry", href: "/industry" },
   { label: "How it works", href: "/#how-it-works" },
   { label: "Testimonials", href: "/#testimonials" },
 ];
@@ -29,13 +31,17 @@ export default function Navbar() {
           scrolled ? "px-4 py-2 shadow-soft" : "px-5 py-3 shadow-lift"
         }`}
       >
-        <Link href="/" className="flex items-center gap-2.5 font-bold tracking-tight">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-ink font-display text-base  text-white transition-transform duration-300 group-hover:scale-105">
-            B
-          </span>
-          <span className="text-lg leading-tight">
-            Blackstone <span className="accent-word">Academia</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <div className="relative h-10 w-auto">
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              width={120}
+              height={40}
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
