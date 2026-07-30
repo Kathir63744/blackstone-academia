@@ -107,7 +107,7 @@ export default function Features() {
               >
                 <div className="flex h-full flex-col overflow-hidden rounded-[inherit] bg-white/90 backdrop-blur-xl">
                   {/* Image band - Full fitted image with custom positioning */}
-                  <div className="relative w-full shrink-0 overflow-hidden" style={{ height: '200px' }}>
+                  <div className="relative w-full shrink-0 overflow-hidden" style={{ height: '250px' }}>
                     <div className="absolute inset-0 overflow-hidden">
                       <img
                         src={f.image}
