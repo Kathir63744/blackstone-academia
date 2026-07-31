@@ -100,7 +100,8 @@ export default function Integrations() {
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <Reveal className="text-center">
-          <span className="eyebrow ">
+          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
             Integrations
           </span>
           <h2 

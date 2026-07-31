@@ -45,14 +45,15 @@ export default function About() {
               ))}
             </div>
           </div>
-          <span className="absolute -right-2 -top-2 rounded-full bg-gradient-to-r from-iris to-indigo-500 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-iris/25">
-            6 role portals
-          </span>
+          
         </Reveal>
 
         {/* Copy */}
         <Reveal delay={100} y={30}>
-          <p className="eyebrow">Who we are</p>
+          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
+           Who we are
+          </span>
           <h2 className="mt-4 text-4xl leading-[1.15] tracking-tight md:text-5xl">
             Manage <span className="text-iris">every</span> role,{" "}
             <span className="text-iris">without</span> the chaos

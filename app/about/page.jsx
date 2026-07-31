@@ -57,7 +57,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-sky1/55 to-cream" />
         </div>
 
-        <div className="relative mx-auto max-w-4xl text-center pt-20 md:pt-28 lg:pt-32">
+        <div className="relative mx-auto max-w-4xl text-center pt-28 sm:pt-20 md:pt-28 lg:pt-32">
           <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur md:px-4 md:text-xs">
             <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
             About Us
@@ -147,10 +147,10 @@ export default function AboutPage() {
       <section className="px-4 py-10 md:py-14">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-slate2 backdrop-blur md:px-4 md:text-[11px]">
-              <span className="h-1.5 w-1.5 rounded-full bg-iris" />
-              Our Values
-            </span>
+            <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
+            Our Values
+          </span>
             <h2 
               className="mt-3 text-2xl leading-[1.15] tracking-tight md:mt-4 md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
@@ -181,10 +181,10 @@ export default function AboutPage() {
       <section className="px-4 py-10 md:py-14">
         <div className="mx-auto grid max-w-6xl items-start gap-8 md:gap-12 lg:grid-cols-2">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-slate2 backdrop-blur md:px-4 md:text-[11px]">
-              <span className="h-1.5 w-1.5 rounded-full bg-iris" />
-              Six Portals
-            </span>
+            <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
+            Six Portals
+          </span>
             <h2 
               className="mt-3 text-2xl leading-[1.15] tracking-tight md:mt-4 md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}

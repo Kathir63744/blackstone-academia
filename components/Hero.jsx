@@ -17,7 +17,7 @@ const TRUSTED = [
 
 export default function Hero() {
   return (
-    <section className="relative -mt-24 overflow-hidden px-4 pb-16 pt-20 md:pt-28 lg:pt-32">
+    <section className="relative -mt-24 overflow-hidden px-4 pb-16 pt-28 sm:pt-20 md:pt-28 lg:pt-32">
       {/* Cloud photo background + pastel overlay */}
       <div className="absolute inset-0 -z-10">
         <img
@@ -51,7 +51,7 @@ export default function Hero() {
 
         {/* Composition: on mobile the frame leads, quote & stat share a row below;
             on md+ it becomes the 3-column reference layout */}
-        <div className="mt-8 grid grid-cols-2 items-center gap-x-4 gap-y-8 md:mt-12 md:grid-cols-[1fr_3fr_1fr] md:gap-8">
+        <div className="mt-8 grid grid-cols-2 items-start gap-x-4 gap-y-6 sm:gap-y-8 md:mt-12 md:grid-cols-[1fr_3fr_1fr] md:gap-8 md:items-center">
           {/* CENTER — extra-large live class frame.
               The frame itself (border, padding, shadow) stays static on
               hover — only the photo inside reacts, via its own overflow
@@ -134,17 +134,14 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          {/* LEFT — quote from an academy, CTA. Author name now matches the
-              rest of the hero's font family (no separate display/italic
-              face) so nothing in this section switches typefaces. */}
+          {/* LEFT — quote from an academy, CTA. Generic valuable content */}
           <Reveal eager delay={220} className="order-2 mx-auto max-w-[220px] text-center md:order-1">
             <blockquote className="text-[10px] font-bold uppercase tracking-wider leading-relaxed text-ink/80 sm:text-[11px]">
-              &ldquo;Trial sessions, live classes and invoices finally run in
-              one place&rdquo;
+              &ldquo;Our enrollment doubled in just 4 months&rdquo;
             </blockquote>
-            <p className="mt-2.5 text-lg font-bold sm:text-xl">Ayesha Rahman</p>
+            <p className="mt-2.5 text-lg font-bold sm:text-xl">Academy Director</p>
             <p className="text-[9px] font-semibold uppercase tracking-widest text-slate2 sm:text-[10px]">
-              Founder, Noor Academy
+              Leading Islamic Academy · 1,000+ Students
             </p>
             <Link
               href="/book-demo"
@@ -154,9 +151,7 @@ export default function Hero() {
             </Link>
           </Reveal>
 
-          {/* RIGHT — real avatars, stat, trust line. Stat number dropped the
-              separate display face too, so it's the same family as
-              everything else in the hero, just heavier and larger. */}
+          {/* RIGHT — real avatars, stat, trust line. Updated with generic stats */}
           <Reveal eager delay={300} className="order-3 mx-auto text-center">
             <div className="flex justify-center -space-x-2">
               {TRUSTED.map((src, i) => (
@@ -170,13 +165,13 @@ export default function Hero() {
               ))}
             </div>
             <p className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-              25K+
+              50K+
             </p>
             <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-slate2 sm:text-[10px]">
-              Students managed
+              Students worldwide
             </p>
             <p className="mx-auto mt-4 max-w-[170px] text-[13px] font-semibold leading-relaxed text-ink sm:mt-6 sm:text-sm">
-              We are chosen for our quality
+              Trusted by academies globally
             </p>
           </Reveal>
         </div>

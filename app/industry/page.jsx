@@ -21,60 +21,52 @@ import {
   Users
 } from "lucide-react";
 
+/* Per-card `color` / `badgeColor` removed — every card now shares one scrim,
+   so the grid reads as a set instead of five unrelated components. */
 const industries = [
   {
-    icon: <GraduationCap className="h-7 w-7" />,
+    icon: <GraduationCap className="h-6 w-6" />,
     title: "K-12 Schools",
     description: "Complete school management with student portals, parent communication, and curriculum delivery.",
     features: ["Student Portals", "Parent Communication", "Curriculum Management", "Assessment Tools"],
     image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80",
     stats: "500+ Schools",
-    color: "from-blue-600/60 to-blue-800/80",
-    badgeColor: "bg-blue-500/20 text-blue-300",
     useCase: "Primary & Secondary Schools"
   },
   {
-    icon: <Building2 className="h-7 w-7" />,
+    icon: <Building2 className="h-6 w-6" />,
     title: "Universities & Colleges",
     description: "Manage large student populations, faculty coordination, and multi-department operations.",
     features: ["Multi-Department", "Faculty Management", "Course Registration", "Analytics"],
     image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
     stats: "200+ Institutions",
-    color: "from-purple-600/60 to-purple-800/80",
-    badgeColor: "bg-purple-500/20 text-purple-300",
     useCase: "Higher Education"
   },
   {
-    icon: <Languages className="h-7 w-7" />,
+    icon: <Languages className="h-6 w-6" />,
     title: "Language Institutes",
     description: "Teach languages with multi-lingual support, level-based progression, and interactive tools.",
     features: ["Multi-Language", "Level-Based Progression", "Speaking Practice", "Certification"],
     image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1200&q=80",
     stats: "300+ Languages",
-    color: "from-emerald-600/60 to-emerald-800/80",
-    badgeColor: "bg-emerald-500/20 text-emerald-300",
     useCase: "Language Learning"
   },
   {
-    icon: <Briefcase className="h-7 w-7" />,
+    icon: <Briefcase className="h-6 w-6" />,
     title: "Professional Training",
     description: "Deliver professional development with certifications, continuing education, and corporate training.",
     features: ["Certification", "Course Management", "Corporate Training", "CE Credits"],
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
     stats: "10,000+ Learners",
-    color: "from-rose-600/60 to-rose-800/80",
-    badgeColor: "bg-rose-500/20 text-rose-300",
     useCase: "Professional Development"
   },
   {
-    icon: <Laptop className="h-7 w-7" />,
+    icon: <Laptop className="h-6 w-6" />,
     title: "Online Tutoring Platforms",
     description: "Scale your tutoring business with live classes, automated billing, and progress tracking.",
     features: ["Live Classes", "One-on-One Tutoring", "Progress Tracking", "Automated Billing"],
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
     stats: "1,000+ Tutors",
-    color: "from-teal-600/60 to-teal-800/80",
-    badgeColor: "bg-teal-500/20 text-teal-300",
     useCase: "Online Tutoring"
   }
 ];
@@ -154,7 +146,7 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      {/* Industry Cards - Even Spacing & Sizes */}
+      {/* Industry Cards */}
       <section className="px-4 py-12 md:py-16 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90" />
@@ -177,68 +169,71 @@ export default function IndustryPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry, i) => (
               <Reveal key={industry.title} delay={i * 60}>
-                <div className="group relative h-[360px] overflow-hidden rounded-2xl shadow-lg transition duration-500 hover:shadow-2xl motion-safe:hover:-translate-y-2">
+                <div className="group relative h-[440px] overflow-hidden rounded-[28px] ring-1 ring-ink/5 shadow-[0_18px_40px_-20px_rgba(15,23,42,0.45)] transition duration-500 hover:shadow-[0_30px_60px_-24px_rgba(15,23,42,0.55)] motion-safe:hover:-translate-y-2">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
                       src={industry.image}
-                      alt={industry.title}
+                      alt=""
+                      aria-hidden="true"
                       fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      sizes="(max-width: 768px) 100vw, 400px"
+                      className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.08]"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
                     />
                   </div>
-                  
-                  {/* Gradient Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-b ${industry.color}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  
-                  {/* Content - Evenly Spaced */}
-                  <div className="relative z-10 flex h-full flex-col justify-between p-6">
-                    {/* Top: Icon and Stats */}
+
+                  {/* Overlay — identical on every card. Three passes: a flat
+                      knock-down so no photo is too bright, a bottom scrim that
+                      carries the text, and a soft top vignette for the badges. */}
+                  <div className="absolute inset-0 bg-ink/35 transition-colors duration-500 group-hover:bg-ink/25" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 via-45% to-transparent" />
+                  <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/55 to-transparent" />
+
+                  {/* Content */}
+                  <div className="relative z-10 flex h-full flex-col p-6">
+                    {/* Top: icon + stat */}
                     <div className="flex items-start justify-between">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur text-white shadow-lg">
+                      <span className="grid h-12 w-12 place-items-center rounded-2xl bg-white/15 text-white ring-1 ring-white/25 backdrop-blur-md transition duration-500 group-hover:bg-white group-hover:text-ink">
                         {industry.icon}
-                      </div>
-                      <span className={`inline-flex items-center gap-1 rounded-full ${industry.badgeColor} px-3 py-1 text-[11px] font-semibold backdrop-blur`}>
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1.5 text-[11px] font-semibold text-white ring-1 ring-white/25 backdrop-blur-md">
                         <TrendingUp className="h-3 w-3" />
                         {industry.stats}
                       </span>
                     </div>
 
-                    {/* Bottom: Title, Description, Features - Even Spacing */}
-                    <div className="space-y-3">
-                      <h3 className="font-display text-2xl font-bold tracking-tight text-white">
+                    {/* Bottom: copy + highlighted features */}
+                    <div className="mt-auto">
+                      <span className="inline-flex items-center gap-1.5 text-[10.5px] font-semibold uppercase tracking-[0.2em] text-sky-200/90">
+                        <Star className="h-3 w-3" />
+                        {industry.useCase}
+                      </span>
+
+                      <h3 className="mt-2 font-display text-[26px] font-bold leading-tight tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                         {industry.title}
                       </h3>
-                      <p className="text-sm leading-relaxed text-white/80 line-clamp-2">
+
+                      <p className="mt-1.5 line-clamp-2 text-[13.5px] leading-relaxed text-white/80">
                         {industry.description}
                       </p>
-                      
-                      {/* Use Case Badge */}
-                      <div>
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 backdrop-blur px-3 py-1 text-[11px] font-medium text-white/85">
-                          <Star className="h-3.5 w-3.5" />
-                          {industry.useCase}
-                        </span>
-                      </div>
 
-                      {/* Feature Tags - Evenly Spaced */}
-                      <div className="flex flex-wrap gap-2 pt-1">
-                        {industry.features.slice(0, 3).map((feature) => (
-                          <span
-                            key={feature}
-                            className="inline-flex items-center gap-1.5 rounded-full bg-white/20 backdrop-blur px-3 py-1.5 text-[13px] font-medium text-white/95"
-                          >
-                            <CheckCircle className="h-3.5 w-3.5 text-white/50" />
-                            {feature}
-                          </span>
-                        ))}
-                        {industry.features.length > 3 && (
-                          <span className="text-[12px] text-white/50 font-medium">
-                            +{industry.features.length - 3}
-                          </span>
-                        )}
+                      {/* The features panel — a frosted plate lifts them off the
+                          photo entirely, so they stay legible on any image. */}
+                      <div className="mt-4 rounded-2xl bg-white/10 p-3.5 ring-1 ring-white/20 backdrop-blur-md transition duration-500 group-hover:bg-white/15 group-hover:ring-white/30">
+                        <p className="mb-2.5 text-[9.5px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                          What&apos;s included
+                        </p>
+                        <ul className="grid grid-cols-2 gap-x-3 gap-y-2">
+                          {industry.features.map((feature) => (
+                            <li
+                              key={feature}
+                              className="flex items-start gap-1.5 text-[12.5px] font-medium leading-snug text-white"
+                            >
+                              <CheckCircle className="mt-px h-3.5 w-3.5 shrink-0 text-sky-300" />
+                              <span className="line-clamp-2">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -249,42 +244,42 @@ export default function IndustryPage() {
         </div>
       </section>
 
-{/* Benefits Section */}
-<section className="px-4 py-12 md:py-16 relative overflow-hidden">
-  <div className="relative z-10 mx-auto max-w-6xl">
-    <Reveal className="mb-10 text-center">
-      <h2 className="font-display text-3xl tracking-tight text-ink md:text-4xl">
-        Why Institutions Choose Us
-      </h2>
-      <p className="mt-2 text-[15px] text-slate2">
-        The platform built for modern education
-      </p>
-    </Reveal>
+      {/* Benefits Section */}
+      <section className="px-4 py-12 md:py-16 relative overflow-hidden">
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <Reveal className="mb-10 text-center">
+            <h2 className="font-display text-3xl tracking-tight text-ink md:text-4xl">
+              Why Institutions Choose Us
+            </h2>
+            <p className="mt-2 text-[15px] text-slate2">
+              The platform built for modern education
+            </p>
+          </Reveal>
 
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {benefits.map((benefit, i) => (
-        <Reveal key={benefit.title} delay={i * 60}>
-          <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 border border-white/60">
-            {/* Glass shine effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
-            
-            <div className="relative z-10">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-iris/20 to-indigo-400/20 text-iris transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-iris/20">
-                {benefit.icon}
-              </div>
-              <h3 className="mt-4 font-display text-base font-medium text-ink">
-                {benefit.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate2/90">
-                {benefit.description}
-              </p>
-            </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((benefit, i) => (
+              <Reveal key={benefit.title} delay={i * 60}>
+                <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 border border-white/60">
+                  {/* Glass shine effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+                  
+                  <div className="relative z-10">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-iris/20 to-indigo-400/20 text-iris transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-iris/20">
+                      {benefit.icon}
+                    </div>
+                    <h3 className="mt-4 font-display text-base font-medium text-ink">
+                      {benefit.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate2/90">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="px-4 py-16 md:py-20">
