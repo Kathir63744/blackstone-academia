@@ -38,6 +38,12 @@ const roles = [
   ["Student & Parent", "Joins classes in one tap, tracks progress, views invoices and chats safely."],
 ];
 
+// Separate images for story and team sections
+const SECTION_IMAGES = {
+  story: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
+  team: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80",
+};
+
 export default function AboutPage() {
   return (
     <main>
@@ -45,7 +51,7 @@ export default function AboutPage() {
 
       {/* Custom Hero Section - Starts from top edge */}
       <section className="relative overflow-hidden px-4 pb-12 md:pb-16 -mt-24">
-        {/* Background Image */}
+        {/* Background Image - Keeping original hero image */}
         <div className="absolute inset-0 -z-10">
           <img
             src={IMAGES.skyClouds}
@@ -100,13 +106,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story with image */}
+      {/* Story with image - Different image for story section */}
       <section className="px-4 py-10 md:py-16">
         <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-12 lg:grid-cols-2">
           <div className="overflow-hidden rounded-2xl border border-white/80 shadow-soft">
             <img
-              src={IMAGES.classroom}
-              alt="A modern learning environment"
+              src={SECTION_IMAGES.story}
+              alt="Students collaborating and learning together"
               className="aspect-[4/3] w-full object-cover"
               loading="lazy"
             />
@@ -177,7 +183,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Roles with team image */}
+      {/* Roles with team image - Different image for team section */}
       <section className="px-4 py-10 md:py-14">
         <div className="mx-auto grid max-w-6xl items-start gap-8 md:gap-12 lg:grid-cols-2">
           <div>
@@ -214,8 +220,8 @@ export default function AboutPage() {
           </div>
           <div className="overflow-hidden rounded-2xl border border-white/80 shadow-soft lg:sticky lg:top-28">
             <img
-              src={IMAGES.team}
-              alt="Academy staff planning together"
+              src={SECTION_IMAGES.team}
+              alt="Academy team collaborating on educational strategies"
               className="aspect-[4/3] w-full object-cover"
               loading="lazy"
             />

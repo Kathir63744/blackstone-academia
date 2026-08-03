@@ -63,7 +63,7 @@ export default function FeatureDetailClient({
       {/* ---------------- BREADCRUMB BAR ---------------- */}
       <div className="border-b border-sky-200/30 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
-          <div className="flex items-center gap-2 text-[13px] text-slate2">
+          <div className="flex items-center gap-2 text-[14px] text-slate2">
             <Link
               href="/features"
               className="inline-flex items-center gap-1.5 font-medium transition hover:text-[#6E93E0]"
@@ -75,7 +75,7 @@ export default function FeatureDetailClient({
             <span className="text-ink">{feature.title}</span>
           </div>
 
-          <span className="text-[13px] tabular-nums text-slate2">
+          <span className="text-[14px] tabular-nums text-slate2">
             <span className="font-semibold text-ink">
               {String(index + 1).padStart(2, "0")}
             </span>
@@ -95,25 +95,25 @@ export default function FeatureDetailClient({
 
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-14">
           <Reveal eager>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#6E93E0]">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#6E93E0]">
               {feature.tagline}
             </p>
 
             <h1
-              className="mt-4 text-balance text-4xl leading-[1.05] tracking-tight text-ink md:text-[3.2rem]"
+              className="mt-4 text-balance text-[3.2rem] leading-[1.05] tracking-tight text-ink md:text-[4rem]"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
             >
               {feature.title}
             </h1>
 
-            <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-ink/80">
+            <p className="mt-5 max-w-xl text-[18px] leading-relaxed text-ink/80">
               {feature.summary}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/book-demo"
-                className="group inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-[14.5px] font-medium text-white shadow-lift transition hover:bg-[#6E93E0] motion-safe:hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 rounded-full bg-slate-900 px-7 py-3.5 text-[15.5px] font-medium text-white shadow-lift transition hover:bg-[#6E93E0] motion-safe:hover:-translate-y-0.5"
                 style={{ fontFamily: "'Onest', sans-serif" }}
               >
                 See it in a demo
@@ -121,7 +121,7 @@ export default function FeatureDetailClient({
               </Link>
               <Link
                 href="/features"
-                className="rounded-full border border-sky-200/40 bg-white/80 px-6 py-3 text-[14.5px] font-medium text-ink transition hover:border-[#6E93E0]/40 hover:text-[#6E93E0] backdrop-blur-sm"
+                className="rounded-full border border-sky-200/40 bg-white/80 px-7 py-3.5 text-[15.5px] font-medium text-ink transition hover:border-[#6E93E0]/40 hover:text-[#6E93E0] backdrop-blur-sm"
                 style={{ fontFamily: "'Onest', sans-serif" }}
               >
                 All features
@@ -144,12 +144,12 @@ export default function FeatureDetailClient({
                   {feature.highlights.map((h) => (
                     <div key={h.label} className="px-4 py-4 text-center">
                       <p
-                        className="text-xl leading-none text-ink"
+                        className="text-2xl leading-none text-ink"
                         style={{ fontFamily: "'Onest', sans-serif", fontWeight: 500 }}
                       >
                         {h.value}
                       </p>
-                      <p className="mt-1.5 text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] text-slate2">
+                      <p className="mt-1.5 text-[11px] font-semibold uppercase leading-tight tracking-[0.12em] text-slate2">
                         {h.label}
                       </p>
                     </div>
@@ -167,7 +167,7 @@ export default function FeatureDetailClient({
           {/* STICKY RAIL */}
           <aside className="hidden lg:block">
             <div className="sticky top-28 py-10">
-              <p className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-slate2">
+              <p className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-slate2">
                 On this page
               </p>
               <nav className="mt-4 space-y-1 border-l border-sky-200/30">
@@ -177,7 +177,7 @@ export default function FeatureDetailClient({
                     <a
                       key={s.id}
                       href={`#${s.id}`}
-                      className={`-ml-px block border-l-2 py-1.5 pl-4 text-[14px] transition ${
+                      className={`-ml-px block border-l-2 py-1.5 pl-4 text-[15px] transition ${
                         active
                           ? "border-[#6E93E0] font-medium text-ink"
                           : "border-transparent text-slate2 hover:border-[#6E93E0]/30 hover:text-ink"
@@ -190,12 +190,12 @@ export default function FeatureDetailClient({
               </nav>
 
               <div className="mt-8 rounded-2xl border border-sky-200/30 bg-sky-50/60 backdrop-blur p-5">
-                <p className="text-[13px] leading-relaxed text-slate2">
+                <p className="text-[14px] leading-relaxed text-slate2">
                   Want to see {feature.title} running on your own workflow?
                 </p>
                 <Link
                   href="/book-demo"
-                  className="group mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-ink transition hover:text-[#6E93E0]"
+                  className="group mt-4 inline-flex items-center gap-1.5 text-[14.5px] font-semibold text-ink transition hover:text-[#6E93E0]"
                 >
                   Book a demo
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -214,12 +214,12 @@ export default function FeatureDetailClient({
             >
               <Reveal>
                 <h2
-                  className="text-2xl tracking-tight text-ink md:text-3xl"
+                  className="text-[2.2rem] tracking-tight text-ink md:text-[2.8rem]"
                   style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
                 >
                   Overview
                 </h2>
-                <p className="mt-5 text-[16px] leading-[1.75] text-slate2">
+                <p className="mt-5 text-[17px] leading-[1.75] text-slate2">
                   {feature.overview}
                 </p>
               </Reveal>
@@ -234,12 +234,12 @@ export default function FeatureDetailClient({
               <Reveal>
                 <div className="flex flex-wrap items-end justify-between gap-3">
                   <h2
-                    className="text-2xl tracking-tight text-ink md:text-3xl"
+                    className="text-[2.2rem] tracking-tight text-ink md:text-[2.8rem]"
                     style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
                   >
                     How it works
                   </h2>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-sky-200/30 bg-white/80 px-3 py-1 text-[11.5px] font-medium text-slate2 backdrop-blur-sm">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-sky-200/30 bg-white/80 px-3 py-1 text-[12.5px] font-medium text-slate2 backdrop-blur-sm">
                     <span
                       className={`h-1.5 w-1.5 rounded-full ${
                         hasVideo ? "animate-pulse bg-emerald-400" : "bg-slate-300"
@@ -249,8 +249,8 @@ export default function FeatureDetailClient({
                   </span>
                 </div>
 
-                {/* Media — caption sits BELOW the frame rather than over it, so
-                   the text never lands on an unpredictable video frame */}
+                {/* Media — caption sits BELOW the frame rather than over it,
+                   so the text never lands on an unpredictable video frame */}
                 <div className="mt-6 overflow-hidden rounded-2xl border border-sky-200/30 bg-white shadow-lift">
                   {hasVideo ? (
                     isMp4 ? (
@@ -281,7 +281,7 @@ export default function FeatureDetailClient({
                     />
                   )}
                 </div>
-                <p className="mt-3 flex items-center gap-2 text-[12.5px] text-slate2">
+                <p className="mt-3 flex items-center gap-2 text-[13.5px] text-slate2">
                   <Play className="h-3.5 w-3.5 text-[#6E93E0]" />
                   {feature.title} — {feature.tagline}
                 </p>
@@ -303,23 +303,23 @@ export default function FeatureDetailClient({
                       </span>
 
                       <div className="min-w-0 pt-1">
-                        <p className="text-[10.5px] font-semibold uppercase tracking-[0.2em] text-slate2">
+                        <p className="text-[11.5px] font-semibold uppercase tracking-[0.2em] text-slate2">
                           Step {String(idx + 1).padStart(2, "0")}
                         </p>
                         <h3
-                          className="mt-1.5 text-lg text-ink"
+                          className="mt-1.5 text-[20px] text-ink"
                           style={{ fontFamily: "'Onest', sans-serif", fontWeight: 500 }}
                         >
                           {step.title}
                         </h3>
-                        <p className="mt-2 text-[14.5px] leading-relaxed text-slate2">
+                        <p className="mt-2 text-[15.5px] leading-relaxed text-slate2">
                           {step.desc}
                         </p>
                         <div className="mt-3 flex flex-wrap gap-2">
                           {step.detail.split(" • ").map((item) => (
                             <span
                               key={item}
-                              className="rounded-full border border-sky-200/30 bg-sky-50/50 backdrop-blur px-2.5 py-1 text-[11.5px] font-medium text-slate2"
+                              className="rounded-full border border-sky-200/30 bg-sky-50/50 backdrop-blur px-3 py-1 text-[12.5px] font-medium text-slate2"
                             >
                               {item}
                             </span>
@@ -341,12 +341,12 @@ export default function FeatureDetailClient({
               <Reveal>
                 <div className="flex flex-wrap items-end justify-between gap-3">
                   <h2
-                    className="text-2xl tracking-tight text-ink md:text-3xl"
+                    className="text-[2.2rem] tracking-tight text-ink md:text-[2.8rem]"
                     style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
                   >
                     What&apos;s included
                   </h2>
-                  <span className="text-[13px] tabular-nums text-slate2">
+                  <span className="text-[14px] tabular-nums text-slate2">
                     {String(feature.capabilities.length).padStart(2, "0")} capabilities
                   </span>
                 </div>
@@ -361,7 +361,7 @@ export default function FeatureDetailClient({
                       <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-md bg-sky-100/60 text-[#6E93E0]">
                         <Check className="h-3 w-3" />
                       </span>
-                      <span className="text-[14.5px] leading-snug text-ink/85">{c}</span>
+                      <span className="text-[15.5px] leading-snug text-ink/85">{c}</span>
                     </li>
                   ))}
                 </ul>
@@ -377,14 +377,14 @@ export default function FeatureDetailClient({
           <div className="mx-auto max-w-6xl">
             <Reveal className="mb-6 flex flex-wrap items-end justify-between gap-3">
               <h2
-                className="text-2xl tracking-tight text-ink md:text-3xl"
+                className="text-[2.2rem] tracking-tight text-ink md:text-[2.8rem]"
                 style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
               >
                 More features
               </h2>
               <Link
                 href="/features"
-                className="inline-flex items-center gap-1.5 text-[13.5px] font-medium text-[#6E93E0] hover:underline"
+                className="inline-flex items-center gap-1.5 text-[14.5px] font-medium text-[#6E93E0] hover:underline"
               >
                 View all
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -408,10 +408,10 @@ export default function FeatureDetailClient({
                       className="h-16 w-16 shrink-0 rounded-xl object-cover"
                     />
                     <div className="min-w-0 flex-1">
-                      <p className="truncate text-[15px] font-medium text-ink transition-colors group-hover:text-[#6E93E0]">
+                      <p className="truncate text-[16px] font-medium text-ink transition-colors group-hover:text-[#6E93E0]">
                         {mod.title}
                       </p>
-                      <p className="mt-0.5 line-clamp-2 text-[12.5px] leading-snug text-slate2">
+                      <p className="mt-0.5 line-clamp-2 text-[13.5px] leading-snug text-slate2">
                         {mod.tagline}
                       </p>
                     </div>
@@ -433,16 +433,16 @@ export default function FeatureDetailClient({
               className="group flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-sky-200/30 bg-white/80 backdrop-blur px-6 py-6 transition hover:border-[#6E93E0]/40 hover:shadow-lift md:px-8"
             >
               <div>
-                <p className="text-[10.5px] font-semibold uppercase tracking-[0.24em] text-slate2">
+                <p className="text-[11.5px] font-semibold uppercase tracking-[0.24em] text-slate2">
                   Next feature
                 </p>
                 <p
-                  className="mt-1.5 text-2xl tracking-tight text-ink transition-colors group-hover:text-[#6E93E0] md:text-3xl"
+                  className="mt-1.5 text-[2.2rem] tracking-tight text-ink transition-colors group-hover:text-[#6E93E0] md:text-[2.8rem]"
                   style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
                 >
                   {next.title}
                 </p>
-                <p className="mt-1 text-[13.5px] text-slate2">{next.tagline}</p>
+                <p className="mt-1 text-[14.5px] text-slate2">{next.tagline}</p>
               </div>
               <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-sky-200/30 text-ink transition duration-300 group-hover:border-transparent group-hover:bg-[#6E93E0] group-hover:text-white">
                 <ArrowRight className="h-5 w-5" />

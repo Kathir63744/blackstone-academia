@@ -140,9 +140,7 @@ export default function Hero() {
               &ldquo;Our enrollment doubled in just 4 months&rdquo;
             </blockquote>
             <p className="mt-2.5 text-lg font-bold sm:text-xl">Academy Director</p>
-            <p className="text-[9px] font-semibold uppercase tracking-widest text-slate2 sm:text-[10px]">
-              Leading Islamic Academy · 1,000+ Students
-            </p>
+           
             <Link
               href="/book-demo"
               className="mt-5 inline-block rounded-full bg-ink px-5 py-2.5 text-[13px] font-semibold text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-ink/85 hover:shadow-soft sm:px-6 sm:py-3 sm:text-sm"

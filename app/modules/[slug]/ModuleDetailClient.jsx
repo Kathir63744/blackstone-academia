@@ -130,55 +130,58 @@ export default function ModuleDetailClient({
 
           <Reveal delay={60} className="group">
             <div className="overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-lift transition duration-500 hover:shadow-soft motion-safe:hover:-translate-y-2">
-              <div className="relative w-full bg-black">
-                {hasVideo ? (
-                  isMp4 ? (
-                    <video
-                      src={module_.video}
-                      className="block h-auto w-full object-contain"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
-                  ) : (
-                    <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                      <iframe
-                        src={`${module_.video}?autoplay=1&loop=1&mute=1&controls=0&rel=0&modestbranding=1`}
-                        title={`${module_.title} overview video`}
-                        className="absolute inset-0 h-full w-full border-0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
-                    </div>
-                  )
-                ) : (
-                  <img
-                    src={workflowImages?.step1 || module_.image}
-                    alt={module_.title}
-                    className="block h-auto w-full object-contain"
-                  />
-                )}
+             {/* VIDEO SECTION - UPDATED */}
+<div className="relative w-full bg-black">
+  {hasVideo ? (
+    isMp4 ? (
+      <video
+        src={module_.video}
+        className="block h-auto w-full object-contain"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+    ) : (
+      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+        <iframe
+          src={`${module_.video}?autoplay=1&loop=1&mute=1&controls=0&rel=0&modestbranding=1`}
+          title={`${module_.title} overview video`}
+          className="absolute inset-0 h-full w-full border-0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    )
+  ) : (
+    <img
+      src={workflowImages?.step1 || module_.image}
+      alt={module_.title}
+      className="block h-auto w-full object-contain"
+    />
+  )}
 
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white/90 via-white/30 to-transparent" />
+  {/* Dark gradient overlay - more opaque and darker */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/95 via-black/60 via-40% to-transparent" />
 
-                <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-8">
-                  <div className="flex flex-wrap items-end justify-between gap-4">
-                    <div>
-                      <h3 className="font-display text-2xl font-semibold text-black drop-shadow-sm md:text-3xl">
-                        {module_.title}
-                      </h3>
-                      <p className="mt-1 max-w-2xl text-base text-black/80 drop-shadow-sm md:text-lg">
-                        {module_.tagline}
-                      </p>
-                    </div>
-                    <span className="flex items-center gap-2 rounded-full bg-black/10 px-3 py-1.5 text-xs text-black backdrop-blur-sm">
-                      <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
-                      {hasVideo ? "Video Demo" : "Coming Soon"}
-                    </span>
-                  </div>
-                </div>
-              </div>
+  {/* Content overlay with white text */}
+  <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-8">
+    <div className="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h3 className="font-display text-2xl font-semibold text-white drop-shadow-lg md:text-3xl">
+          {module_.title}
+        </h3>
+        <p className="mt-1 max-w-2xl text-base text-white/90 drop-shadow-lg md:text-lg">
+          {module_.tagline}
+        </p>
+      </div>
+      <span className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-xs text-white backdrop-blur-sm border border-white/20">
+        <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
+        {hasVideo ? "Video Demo" : "Coming Soon"}
+      </span>
+    </div>
+  </div>
+</div>
 
               {/* Steps */}
               <div className="p-6 md:p-10">

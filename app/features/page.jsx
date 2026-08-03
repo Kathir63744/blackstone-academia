@@ -192,7 +192,7 @@ export default function FeaturesPage() {
                 style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
               >
                 Everything you need.
-                <span className="block" style={{ color: ACCENT }}>
+                <span className=" text-slate" >
                   Nothing you don&apos;t.
                 </span>
               </h1>
