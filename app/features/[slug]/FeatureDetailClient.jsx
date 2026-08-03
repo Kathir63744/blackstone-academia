@@ -61,7 +61,7 @@ export default function FeatureDetailClient({
       <Navbar />
 
       {/* ---------------- BREADCRUMB BAR ---------------- */}
-      <div className="border-b border-sky-200/30 bg-white/80 backdrop-blur-sm">
+      <div className="border-b border-sky-200/30  backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-4">
           <div className="flex items-center gap-2 text-[14px] text-slate2">
             <Link
@@ -89,7 +89,7 @@ export default function FeatureDetailClient({
       <section className="relative overflow-hidden px-4 pb-10 pt-10 md:pb-14 md:pt-14">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -left-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-[#6E93E0]/15 blur-[140px]" />
-          <div className="absolute -right-28 top-0 h-[24rem] w-[24rem] rounded-full bg-sky-200/30 blur-[140px]" />
+          <div className="absolute -right-28 top-0 h-[24rem] w-[24rem] rounded-full  blur-[140px]" />
           <div className="absolute bottom-0 left-1/2 h-[20rem] w-[40rem] -translate-x-1/2 rounded-full bg-cream-200/20 blur-[100px]" />
         </div>
 

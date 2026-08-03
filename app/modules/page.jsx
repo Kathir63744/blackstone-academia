@@ -159,36 +159,27 @@ export default function ModulesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-4 pb-16 md:pb-20">
-        <Reveal className="mx-auto max-w-6xl">
-          <div className="rounded-2xl bg-gradient-to-br from-white via-iris/35 to-sky1/60 p-px shadow-soft">
-            <div className="relative overflow-hidden rounded-[inherit] bg-white/85 px-8 py-12 text-center backdrop-blur-xl md:px-14">
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[32rem] -translate-x-1/2 rounded-full bg-iris/20 blur-[100px]"
-              />
-              <h2
-                className="relative text-3xl tracking-tight text-ink md:text-4xl"
-                style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
-              >
-                See all five portals live
-              </h2>
-              <p className="relative mx-auto mt-3 max-w-lg text-[15px] text-slate2 md:text-base">
-                Book a 30-minute walkthrough and we&apos;ll demo the portals your team will
-                actually use, with your real workflow.
-              </p>
-              <Link
-                href="/book-demo"
-                className="group relative mt-7 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-[15px] font-medium text-white shadow-lift transition hover:bg-iris hover:shadow-soft motion-safe:hover:-translate-y-0.5"
-                style={{ fontFamily: "'Onest', sans-serif" }}
-              >
-                Book a free demo
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-            </div>
-          </div>
-        </Reveal>
+ <section className="px-4 py-12 md:py-16">
+        <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
+          <h2 
+            className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
+            style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
+          >
+            See all five portals live
+
+          </h2>
+          <p className="mx-auto mt-3 max-w-lg text-sm text-slate2 md:mt-4 md:text-[15px] lg:text-base">
+           Book a 30-minute walkthrough and we'll demo the portals your team will actually use, with your real workflow.
+          </p>
+          <Link
+            href="/book-demo"
+            className="mt-5 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-white shadow-lift transition hover:bg-ink/85 md:mt-8 md:px-8 md:py-4 md:text-base"
+            style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
+          >
+            Book a free demo
+          </Link>
+          
+        </div>
       </section>
 
       <Footer />

@@ -61,6 +61,7 @@ export default function Footer() {
         className="mx-auto max-w-7xl rounded-3xl border border-white/60 bg-white/80 p-8 shadow-lift backdrop-blur md:p-12 lg:p-14"
       >
         <div className="grid gap-10 md:grid-cols-[1.1fr_2.6fr] lg:gap-12">
+          {/* Left Column - Brand */}
           <div>
             <Link href="/" className="inline-flex items-center gap-2">
               <Image
@@ -100,12 +101,18 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          {/* Right Column - Navigation Links */}
+          <div className="grid grid-cols-2  gap-8 sm:grid-cols-4">
             {columns.map((col) => (
               <div key={col.heading}>
-                <p className="text-xs font-bold uppercase tracking-widest text-slate2">
-                  {col.heading}
-                </p>
+                {/* Heading - fixed height to align all headings */}
+                <div className="h-[20px]">
+                  <p className="text-xs ml-3 font-bold uppercase tracking-widest text-slate2 leading-none">
+                    {col.heading}
+                  </p>
+                </div>
+                
+                {/* Links - all start from same position */}
                 <ul className="mt-3 space-y-2.5">
                   {col.links.map(([label, href]) => {
                     const active = isActive(href);
@@ -120,11 +127,9 @@ export default function Footer() {
                               : "text-ink/80 hover:translate-x-0.5 hover:text-ink"
                           }`}
                         >
-                          {/* Active marker — a small dot rather than a colour
-                              change alone, so it reads without relying on hue */}
                           <span
                             aria-hidden="true"
-                            className={`h-1.5 w-1.5 rounded-full transition ${
+                            className={`h-1.5 w-1.5 rounded-full transition flex-shrink-0 ${
                               active ? "bg-iris" : "bg-transparent"
                             }`}
                           />
@@ -139,6 +144,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line pt-6 text-xs text-slate2 md:flex-row">
           <p>© {new Date().getFullYear()} Blackstone Academia. All rights reserved.</p>
           <ul className="flex flex-wrap items-center gap-5">

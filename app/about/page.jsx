@@ -64,8 +64,11 @@ export default function AboutPage() {
         </div>
 
         <div className="relative mx-auto max-w-4xl text-center pt-28 sm:pt-20 md:pt-28 lg:pt-32">
-          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur md:px-4 md:text-xs">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
+            </span>
             About Us
           </span>
 
@@ -83,10 +86,12 @@ export default function AboutPage() {
           </p>
 
           {/* Trust Badge */}
-          <span className="mx-auto mt-5 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur md:mt-6 md:px-4 md:py-2 md:text-xs">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Trusted by 500+ academies worldwide
-          </span>
+         <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 mt-3 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
+            </span>
+            Trusted by academies in 500+ academies          </span>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:mt-8 md:gap-4">
             <Link
@@ -153,9 +158,12 @@ export default function AboutPage() {
       <section className="px-4 py-10 md:py-14">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-xl text-center">
-            <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
-            Our Values
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
+            </span>
+            Our values
           </span>
             <h2 
               className="mt-3 text-2xl leading-[1.15] tracking-tight md:mt-4 md:text-3xl lg:text-4xl"
@@ -187,8 +195,11 @@ export default function AboutPage() {
       <section className="px-4 py-10 md:py-14">
         <div className="mx-auto grid max-w-6xl items-start gap-8 md:gap-12 lg:grid-cols-2">
           <div>
-            <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
+           <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
+            </span>
             Six Portals
           </span>
             <h2 
@@ -229,9 +240,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-4xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
+  <section className="px-4 py-12 md:py-16">
+        <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
           <h2 
             className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
             style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
@@ -249,6 +259,7 @@ export default function AboutPage() {
           >
             Book a free demo
           </Link>
+          
         </div>
       </section>
 

@@ -121,18 +121,12 @@ const JitsiFeatureSection = () => {
       <div className="relative mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center">
-          <span className="mx-auto mb-7 inline-flex items-center gap-2.5 rounded-full border border-sky-200/60 bg-white/80 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-600 backdrop-blur shadow-lift">
+          <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 mb-6 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
             <span className="relative flex h-1.5 w-1.5">
-              <span
-                className="absolute inline-flex h-full w-full  rounded-full"
-                style={{ backgroundColor: ACCENT }}
-              />
-              <span
-                className="relative inline-flex h-1.5 w-1.5 rounded-full"
-                style={{ backgroundColor: ACCENT }}
-              />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
             </span>
-            Our Flagship Feature — Built on Jitsi
+           Our Flagship Feature — Built on Jitsi
           </span>
 
           <h2 className="text-4xl leading-[1.15] tracking-tight md:text-5xl">

@@ -39,8 +39,11 @@ export default function Testimonials() {
 
       <div className="mx-auto max-w-6xl">
         <Reveal as="div" className="mx-auto max-w-xl text-center">
-          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
+           <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
+            </span>
             Testimonials
           </span>
           <h2 className="mt-3 text-3xl leading-tight tracking-tight md:text-5xl">

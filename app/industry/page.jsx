@@ -244,66 +244,57 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="px-4 py-12 md:py-16 relative overflow-hidden">
-        <div className="relative z-10 mx-auto max-w-6xl">
-          <Reveal className="mb-10 text-center">
-            <h2 className="font-display text-3xl tracking-tight text-ink md:text-4xl">
-              Why Institutions Choose Us
-            </h2>
-            <p className="mt-2 text-[15px] text-slate2">
-              The platform built for modern education
-            </p>
-          </Reveal>
+     {/* Benefits Section */}
+<section className="px-4 py-12 md:py-16 relative overflow-hidden">
+  <div className="relative z-10 mx-auto max-w-6xl">
+    <Reveal className="mb-10 text-center">
+      <h2 className="font-display text-3xl tracking-tight text-ink md:text-4xl">
+        Why Institutions Choose Us
+      </h2>
+      <p className="mt-2 text-[15px] text-slate2">
+        The platform built for modern education
+      </p>
+    </Reveal>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {benefits.map((benefit, i) => (
-              <Reveal key={benefit.title} delay={i * 60}>
-                <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 border border-white/60">
-                  {/* Glass shine effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
-                  
-                  <div className="relative z-10">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-iris/20 to-indigo-400/20 text-iris transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-iris/20">
-                      {benefit.icon}
-                    </div>
-                    <h3 className="mt-4 font-display text-base font-medium text-ink">
-                      {benefit.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate2/90">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {benefits.map((benefit, i) => (
+        <Reveal key={benefit.title} delay={i * 60}>
+          <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 border border-white/60 h-full flex flex-col">
+            {/* Glass shine effect */}
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+            
+            <div className="relative z-10 flex flex-col h-full">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-iris/20 to-indigo-400/20 text-iris transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-iris/20">
+                {benefit.icon}
+              </div>
+              <h3 className="mt-4 font-display text-base font-medium text-ink">
+                {benefit.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate2/90 flex-1">
+                {benefit.description}
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </Reveal>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* CTA Section */}
-      <section className="px-4 py-16 md:py-20">
-        <Reveal className="mx-auto max-w-6xl">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-iris/20 via-sky1/20 to-iris/10 p-px shadow-soft">
-            <div className="relative rounded-[inherit] bg-white/90 px-8 py-12 text-center backdrop-blur-xl md:px-12">
-              <div className="absolute top-0 right-0 w-48 h-48 bg-iris/10 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-sky1/10 rounded-full blur-3xl" />
-              
-              <div className="relative z-10">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-[10px] font-semibold text-green-700">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
-                  </span>
-                  Available Now
-                </span>
-                <h2 className="mt-4 text-3xl tracking-tight text-ink md:text-4xl">
-                  Ready to Transform Your Institution?
-                </h2>
-                <p className="relative mx-auto mt-3 max-w-md text-[15px] text-slate2">
-                  Join 1,000+ educational institutions already using Blackstone Academia.
-                </p>
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+<section className="px-4 py-12 md:py-16">
+        <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
+          <h2 
+            className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
+            style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
+          >
+            
+ Ready to Transform Your Institution?
+
+          </h2>
+          <p className="mx-auto mt-3 max-w-lg text-sm text-slate2 md:mt-4 md:text-[15px] lg:text-base">
+           Join 1,000+ educational institutions already using Blackstone Academia.
+          </p>
+         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                   <Link
                     href="/book-demo"
                     className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3 text-[15px] font-medium text-white shadow-lift transition hover:bg-iris motion-safe:hover:-translate-y-0.5"
@@ -319,10 +310,8 @@ export default function IndustryPage() {
                     Explore modules
                   </Link>
                 </div>
-              </div>
-            </div>
-          </div>
-        </Reveal>
+          
+        </div>
       </section>
 
       <Footer />

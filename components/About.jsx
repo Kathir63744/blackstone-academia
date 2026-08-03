@@ -50,9 +50,12 @@ export default function About() {
 
         {/* Copy */}
         <Reveal delay={100} y={30}>
-          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
-           Who we are
+          <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
+            </span>
+            Who we are
           </span>
           <h2 className="mt-4 text-4xl leading-[1.15] tracking-tight md:text-5xl">
             Manage <span className="text-iris">every</span> role,{" "}

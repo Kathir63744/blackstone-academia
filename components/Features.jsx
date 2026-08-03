@@ -222,8 +222,11 @@ export default function Features() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-slate2 shadow-lift backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#6E93E0]" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
+            </span>
             Our Features
           </span>
           <h2 className="mt-5 text-balance text-3xl font-light leading-[1.15] tracking-tight sm:text-4xl md:text-5xl">
