@@ -18,54 +18,54 @@ import {
   Languages,
   Briefcase,
   Laptop,
-  Users
+  Users,
+  BookOpen,
+  Video,
+  CreditCard,
+  MessageCircle,
+  BarChart3,
+  Calendar,
+  Award,
+  Globe
 } from "lucide-react";
 
 const industries = [
   {
     icon: <GraduationCap className="h-6 w-6" />,
-    title: "K-12 Schools",
-    description: "Complete school management with student portals, parent communication, and curriculum delivery.",
-    features: ["Student Portals", "Parent Communication", "Curriculum Management", "Assessment Tools"],
+    title: "Online Academies",
+    description: "Complete online academy management with student portals, teacher coordination, and live class delivery.",
+    features: ["Student Portals", "Teacher Management", "Live Classes", "Trial Sessions"],
     image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80",
-    stats: "500+ Schools",
-    useCase: "Primary & Secondary Schools"
+    stats: "Live Classes",
+    useCase: "Online Education"
   },
-  {
-    icon: <Building2 className="h-6 w-6" />,
-    title: "Universities & Colleges",
-    description: "Manage large student populations, faculty coordination, and multi-department operations.",
-    features: ["Multi-Department", "Faculty Management", "Course Registration", "Analytics"],
-    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
-    stats: "200+ Institutions",
-    useCase: "Higher Education"
-  },
+
   {
     icon: <Languages className="h-6 w-6" />,
     title: "Language Institutes",
-    description: "Teach languages with multi-lingual support, level-based progression, and interactive tools.",
-    features: ["Multi-Language", "Level-Based Progression", "Speaking Practice", "Certification"],
+    description: "Teach languages with multi-currency support, level-based progression, and interactive learning tools.",
+    features: ["Multi-Currency", "Level-Based", "Interactive Tools", "Assignments"],
     image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1200&q=80",
-    stats: "300+ Languages",
+    stats: "Multi-Currency",
     useCase: "Language Learning"
   },
   {
     icon: <Briefcase className="h-6 w-6" />,
     title: "Professional Training",
-    description: "Deliver professional development with certifications, continuing education, and corporate training.",
-    features: ["Certification", "Course Management", "Corporate Training", "CE Credits"],
+    description: "Deliver professional development with certifications, course management, and corporate training programs.",
+    features: ["Certification", "Course Management", "Corporate Training", "Assessments"],
     image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80",
-    stats: "10,000+ Learners",
+    stats: "Certifications",
     useCase: "Professional Development"
   },
   {
     icon: <Laptop className="h-6 w-6" />,
-    title: "Online Tutoring Platforms",
-    description: "Scale your tutoring business with live classes, automated billing, and progress tracking.",
-    features: ["Live Classes", "One-on-One Tutoring", "Progress Tracking", "Automated Billing"],
+    title: "Tutoring Centers",
+    description: "Scale your tutoring business with live classes, automated invoicing, and student progress tracking.",
+    features: ["Live Classes", "Student Tracking", "Invoicing", "Progress Reports"],
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
-    stats: "1,000+ Tutors",
-    useCase: "Online Tutoring"
+    stats: "Invoicing",
+    useCase: "Private Tutoring"
   }
 ];
 
@@ -73,22 +73,32 @@ const benefits = [
   {
     icon: <Zap className="h-5 w-5" />,
     title: "All-in-One Platform",
-    description: "Everything you need in one place — no integrations, no add-ons.",
+    description: "Students, teachers, coaches, and admins — all connected in one system.",
   },
   {
-    icon: <Clock className="h-5 w-5" />,
-    title: "Scale with Ease",
-    description: "Grow your institution without growing your administrative burden.",
+    icon: <Video className="h-5 w-5" />,
+    title: "Live Class Ready",
+    description: "Integrated with Zoom, MS Teams, and Jitsi for seamless live sessions.",
+  },
+  {
+    icon: <CreditCard className="h-5 w-5" />,
+    title: "Automated Invoicing",
+    description: "Stripe & PayPal integration with multi-currency support (AED, GBP, USD).",
+  },
+  {
+    icon: <MessageCircle className="h-5 w-5" />,
+    title: "Real-time Communication",
+    description: "In-app chat, email templates, and WhatsApp Business notifications.",
+  },
+  {
+    icon: <BarChart3 className="h-5 w-5" />,
+    title: "Analytics & Reports",
+    description: "Performance tracking, attendance reports, and automated insights.",
   },
   {
     icon: <Shield className="h-5 w-5" />,
     title: "Enterprise Security",
-    description: "Bank-grade security and compliance for your institution's data.",
-  },
-  {
-    icon: <Sparkles className="h-5 w-5" />,
-    title: "Future-Ready",
-    description: "Built for modern education with AI-powered tools and analytics.",
+    description: "MFA, IP tracking, session limits, and role-based access control.",
   }
 ];
 
@@ -103,7 +113,7 @@ export default function IndustryPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative px-4 pt-16 pb-8 md:pt-20 md:pb-10 overflow-hidden">
+      <section className="relative px-4 pt-10 pb-8 md:pt-10 md:pb-10 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-iris/30 rounded-full blur-[150px]" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky1/30 rounded-full blur-[150px]" />
@@ -118,11 +128,10 @@ export default function IndustryPage() {
               Industry Solutions
             </span>
             <h1 className="mt-5 text-3xl leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl">
-              One Platform for Every
-              <span className="block text-iris">Educational Institution</span>
-            </h1>
+  Solutions for Every Industry
+</h1>
             <p className="mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed text-slate2 md:text-base">
-              From K-12 schools to universities and professional training centers — 
+              From online academies to professional training centers — 
               Blackstone Academia adapts to your unique educational needs.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -216,7 +225,7 @@ export default function IndustryPage() {
                       {/* Features panel */}
                       <div className="mt-4 rounded-2xl bg-white/10 p-3.5 ring-1 ring-white/20 backdrop-blur-md transition duration-500 group-hover:bg-white/15 group-hover:ring-white/30">
                         <p className="mb-2.5 text-[9.5px] font-semibold uppercase tracking-[0.2em] text-white/55">
-                          What&apos;s included
+                          Key Features
                         </p>
                         <ul className="grid grid-cols-2 gap-x-3 gap-y-2">
                           {industry.features.map((feature) => (
@@ -239,7 +248,7 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      {/* Benefits Section - 4 Column with Equal Height */}
+      {/* Benefits Section - 6 Column with Equal Height */}
       <section className="px-4 py-12 md:py-16 relative overflow-hidden">
         <div className="relative z-10 mx-auto max-w-6xl">
           <Reveal className="mb-10 text-center">
@@ -247,11 +256,11 @@ export default function IndustryPage() {
               Why Institutions Choose Us
             </h2>
             <p className="mt-2 text-[15px] text-slate2">
-              The platform built for modern education
+              Built for modern education with enterprise-grade features
             </p>
           </Reveal>
 
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit, i) => (
               <Reveal key={benefit.title} delay={i * 60}>
                 <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 border border-white/60 h-full flex flex-col min-h-[180px]">
@@ -286,7 +295,7 @@ export default function IndustryPage() {
             Ready to Transform Your Institution?
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-sm text-slate2 md:mt-4 md:text-[15px] lg:text-base">
-            Join 1,000+ educational institutions already using Blackstone Academia.
+            Join educational institutions already using Blackstone Academia.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link

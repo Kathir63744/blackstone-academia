@@ -67,7 +67,7 @@ function ModuleCard({ item }) {
 
 function FeatureCard({ item, index, total }) {
   return (
-    <article className="relative grid h-full overflow-hidden rounded-3xl bg-ink text-white ring-1 ring-white/10 shadow-[0_40px_80px_-40px_rgba(15,23,42,0.65)] md:grid-cols-[1.05fr_1fr]">
+    <article className="relative grid h-full overflow-hidden rounded-3xl bg-ink text-white ring-1 ring-white/10 shadow-[0_40px_80px_-40px_rgba(15,23,42,0.65)] md:grid-cols-[0.8fr_1.2fr]">
       {/* Mobile: the image sits behind the copy instead of beside it */}
       <img
         src={item.image}
@@ -93,17 +93,17 @@ function FeatureCard({ item, index, total }) {
         </div>
 
         <div className="mt-6">
-          <h4 className="text-balance text-3xl font-light leading-[1.15] tracking-tight sm:text-4xl lg:text-[2.75rem]">
+          <h4 className="text-balance text-2xl font-light leading-[1.15] tracking-tight sm:text-3xl lg:text-[2.25rem]">
             {item.title}
           </h4>
-          <p className="mt-4 line-clamp-4 max-w-md text-base leading-relaxed text-white/65">
+          <p className="mt-3 line-clamp-4 max-w-sm text-sm leading-relaxed text-white/65 sm:text-base">
             {item.summary}
           </p>
         </div>
 
         <Link
           href={`/features/${item.slug}`}
-          className="group mt-8 inline-flex w-fit items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+          className="group mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-ink transition duration-300 hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
         >
           Explore {item.title}
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 motion-reduce:transform-none" />
@@ -120,8 +120,8 @@ function FeatureCard({ item, index, total }) {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
         />
+        {/* SAME GRADIENT - Now applied to smaller container */}
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/45 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
       </div>
     </article>
   );
@@ -237,7 +237,7 @@ export default function Features() {
             >
               grow
             </span>{" "}
-            your academy
+            your university
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate2 md:text-lg">
             No stitched-together tools. Every module ships in one platform and works together out of
@@ -288,12 +288,12 @@ export default function Features() {
             </div>
 
             {/* Tabs: a sliding highlight rides under the active pill */}
-            <div className="mx-auto mb-10 flex max-w-3xl items-center gap-2">
+            <div className="mx-auto mb-10 flex max-w-6xl items-center gap-32">
               <div
                 ref={tabsRef}
                 role="tablist"
                 aria-label="Features"
-                className={`relative flex flex-1 gap-1 overflow-x-auto rounded-full bg-white/85 p-1.5 ring-1 ring-ink/5 shadow-lg shadow-ink/5 backdrop-blur-md ${noScrollbar}`}
+                className={`relative flex flex-1 gap-1 overflow-x-auto rounded-full bg-white/85 p-2.5 ring-1 ring-ink/5 shadow-lg shadow-ink/5 backdrop-blur-md ${noScrollbar}`}
               >
                 {/* the highlight itself */}
                 <span
@@ -331,14 +331,7 @@ export default function Features() {
                 })}
               </div>
 
-              <button
-                type="button"
-                onClick={() => setPlaying((p) => !p)}
-                aria-label={playing ? "Pause the feature deck" : "Play the feature deck"}
-                className="shrink-0 rounded-full bg-white/85 p-3 text-slate-600 ring-1 ring-ink/5 shadow-lg shadow-ink/5 backdrop-blur-md transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-              >
-                {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-              </button>
+              
             </div>
 
             {/* The deck */}

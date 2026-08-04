@@ -31,25 +31,25 @@ const integrationGroups = [
   },
   { 
     label: "Payments", 
-    items: ["Stripe", "PayPal", "Wise"],
+    items: ["Stripe", "PayPal"],
     icon: CreditCard,
     color: "from-green-400 to-green-600",
     description: "Secure payment processing for tuition, fees, and donations.",
     images: [
       "/icons8-stripe.svg",
       "/icons8-paypal.svg",
-      "/icons8-wise.svg",
+
     ]
   },
   {
     label: "Messaging & files",
-    items: ["WhatsApp", "Office 365", "SharePoint", "OneDrive", "Google Drive"],
+    items: ["WhatsApp",  "SharePoint", "OneDrive", "Google Drive"],
     icon: MessageSquare,
     color: "from-purple-400 to-purple-600",
     description: "Collaborative tools for file sharing, communication, and document management.",
     images: [
       "/icons8-whatsapp.svg",
-      "/icons8-office-365.svg",
+    
       "/icons8-sharepoint (1).svg",
       "/icons8-onedrive (1).svg",
       "/icons8-google-drive.svg",
@@ -214,7 +214,7 @@ export default function Integrations() {
           </div>
           <div className="text-center">
             <p className="text-md font-semibold text-ink">SSO Integration</p>
-            <p className="text-[14px] text-slate2/70">Google & Apple</p>
+            <p className="text-[14px] text-slate2/70">Google </p>
           </div>
         </div>
 
@@ -246,8 +246,8 @@ export default function Integrations() {
             <Zap className="h-5 w-5" />
           </div>
           <div className="text-center">
-            <p className="text-md font-semibold text-ink">2FA Security</p>
-            <p className="text-[14px] text-slate2/80">Two-factor authentication</p>
+            <p className="text-md font-semibold text-ink">Security</p>
+            <p className="text-[14px] text-slate2/80">End-to-end authentication</p>
           </div>
         </div>
       </div>

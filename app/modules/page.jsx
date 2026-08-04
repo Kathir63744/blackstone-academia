@@ -91,7 +91,7 @@ export default function ModulesPage() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-2">
           {MODULES.map((f, i) => {
             const edge = EDGES[i % EDGES.length];
-            const peek = (f.capabilities ?? []).slice(0, 3);
+            const peek = (f.capabilities ?? []).slice(0, 6);
             const imagePosition = BOTTOM_ANCHORED.includes(f.slug)
               ? "object-bottom"
               : "object-center";
@@ -139,15 +139,17 @@ export default function ModulesPage() {
                       {f.summary}
                     </p>
 
+                    {/* Feature chips - COLUMN layout: each appears one by one vertically */}
                     {peek.length > 0 && (
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {peek.map((c) => (
-                          <span
+                      <div className="mt-4 flex flex-col gap-1.5">
+                        {peek.map((c, idx) => (
+                          <Reveal
                             key={c}
-                            className="rounded-full border border-ink/10 bg-mist px-3 py-1 text-xs font-medium text-slate2"
+                            delay={100 + idx * 80}
+                            className="inline-flex items-center rounded-full border border-ink/10 bg-mist px-3 py-1.5 text-xs font-medium text-slate2 transition duration-300 hover:border-iris/30 hover:bg-iris/5 hover:text-ink"
                           >
                             {c}
-                          </span>
+                          </Reveal>
                         ))}
                       </div>
                     )}
@@ -159,27 +161,27 @@ export default function ModulesPage() {
         </div>
       </section>
 
- <section className="px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
-          <h2 
-            className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
-            style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
-          >
-            See all five portals live
-
-          </h2>
-          <p className="mx-auto mt-3 max-w-lg text-sm text-slate2 md:mt-4 md:text-[15px] lg:text-base">
-           Book a 30-minute walkthrough and we'll demo the portals your team will actually use, with your real workflow.
-          </p>
-          <Link
-            href="/book-demo"
-            className="mt-5 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-white shadow-lift transition hover:bg-ink/85 md:mt-8 md:px-8 md:py-4 md:text-base"
-            style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
-          >
-            Book a free demo
-          </Link>
-          
-        </div>
+      <section className="px-4 py-12 md:py-16">
+        <Reveal delay={100 + MODULES.length * 80}>
+          <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
+            <h2 
+              className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
+              style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
+            >
+              See all five portals live
+            </h2>
+            <p className="mx-auto mt-3 max-w-lg text-sm text-slate2 md:mt-4 md:text-[15px] lg:text-base">
+              Book a 30-minute walkthrough and we'll demo the portals your team will actually use, with your real workflow.
+            </p>
+            <Link
+              href="/book-demo"
+              className="mt-5 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-white shadow-lift transition hover:bg-ink/85 md:mt-8 md:px-8 md:py-4 md:text-base"
+              style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
+            >
+              Book a free demo
+            </Link>
+          </div>
+        </Reveal>
       </section>
 
       <Footer />

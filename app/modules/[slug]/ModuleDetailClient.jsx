@@ -130,8 +130,8 @@ export default function ModuleDetailClient({
 
           <Reveal delay={60} className="group">
             <div className="overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-lift transition duration-500 hover:shadow-soft motion-safe:hover:-translate-y-2">
-             {/* VIDEO SECTION - UPDATED */}
-<div className="relative w-full bg-black">
+{/* VIDEO SECTION - BLACK OVERLAY FADE ABOVE TEXT */}
+<div className="relative w-full bg-black/5">
   {hasVideo ? (
     isMp4 ? (
       <video
@@ -161,17 +161,17 @@ export default function ModuleDetailClient({
     />
   )}
 
-  {/* Bottom dark overlay - fully black at bottom */}
-  <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-black via-black/90 via-20% via-black/60 via-50% via-black/20 via-80% to-transparent" />
+  {/* BLACK OVERLAY FADE - Specifically for text readability */}
+  <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-black/70 via-black/30 via-30% via-black/10 via-60% to-transparent" />
 
-  {/* Content overlay */}
+  {/* Content overlay with white text */}
   <div className="absolute inset-x-0 bottom-0 z-10 p-4 md:p-6">
     <div className="flex flex-wrap items-end justify-between gap-3">
       <div>
-        <h3 className="font-display text-xl font-semibold text-white [text-shadow:0_4px_20px_rgba(0,0,0,0.9)] md:text-2xl">
+        <h3 className="font-display text-xl font-semibold text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)] md:text-2xl">
           {module_.title}
         </h3>
-        <p className="mt-1 max-w-2xl text-sm text-white/95 [text-shadow:0_2px_10px_rgba(0,0,0,0.9)] md:text-base">
+        <p className="mt-1 max-w-2xl text-sm text-white/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] md:text-base">
           {module_.tagline}
         </p>
       </div>

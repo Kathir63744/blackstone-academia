@@ -29,15 +29,9 @@ const values = [
   },
 ];
 
-const stats = [
-  { number: "500+", label: "Institutions" },
-  { number: "50K+", label: "Active Learners" },
-  { number: "12+", label: "Countries" },
-  { number: "95%", label: "Retention Rate" },
-];
+
 
 const roles = [
-  ["Super Admin", "Complete platform control: analytics, finance, settings, and every permission at your fingertips."],
   ["Admin & Staff", "Run daily operations seamlessly — invoicing, reports, announcements, and student support."],
   ["Academic Coach", "Evaluate trials, assign classes, manage student journeys, and track progress."],
   ["Supervisor", "Hire and train teachers, manage feedback, and ensure class quality standards."],
@@ -140,22 +134,14 @@ export default function AboutPage() {
             </h2>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate2 md:mt-6 md:space-y-4 md:text-[15px] lg:text-base">
               <p>
-                Educational institutions grow fast — and the tooling breaks first. 
-                Trial students are booked via WhatsApp, scheduled in spreadsheets, 
-                invoiced from PDF templates, and taught over Zoom links pasted into 
-                group chats. Every handoff is a place for things to fall through.
+              We are a technology-driven team focused on transforming the way educational institutions manage their day-to-day operations.
               </p>
               <p>
-                We spent over a year building the alternative: a single system
-                where a trial registration flows into evaluation, class
-                assignment, live teaching, automatic recording, invoicing, and
-                progress reporting — with every role seeing exactly what they
-                need.
+                Our Education Management Solution brings students, faculty, administrators, and management together on one unified platform—making academic management, communication, learning, attendance, assessments, and administration simpler and more efficient.
               </p>
               <p>
-                Today, Blackstone Academia powers K-12 schools, universities, 
-                language institutes, and professional training centers across 
-                time zones and currencies worldwide.
+              Today, Blackstone Academia empowers universities, colleges
+engineering institutions, business schools, and higher education institutions with the tools they need to simplify operations enhance collaboration, improve student experiences and accelerate digital transformation.
               </p>
             </div>
           </div>
@@ -199,22 +185,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Roles Section */}
+{/* Roles Section */}
       <section className="px-4 py-10 md:py-14">
-        <div className="mx-auto grid max-w-6xl items-start gap-8 md:gap-12 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-12 lg:grid-cols-2">
+          {/* Left Content */}
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
                 <span className="eyebrow" />
               </span>
-              Six Portals
+              Five Portals
             </span>
             <h2 
               className="mt-3 text-2xl leading-[1.15] tracking-tight md:mt-4 md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
             >
-              Six portals, <span className="text-iris">one platform</span>
+              Five portals, <span className="text-iris">one platform</span>
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-slate2 md:mt-5 md:text-[15px] lg:text-base">
               Every person in your institution gets a portal shaped around their
@@ -237,11 +224,13 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-white/80 shadow-soft lg:sticky lg:top-28">
+
+          {/* Right Image - Fixed, No Scroll Effect */}
+          <div className="overflow-hidden rounded-2xl border border-white/80 shadow-soft">
             <img
               src={SECTION_IMAGES.team}
               alt="Academy team collaborating on educational strategies"
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-[4/3.5] w-full object-cover"
               loading="lazy"
             />
           </div>

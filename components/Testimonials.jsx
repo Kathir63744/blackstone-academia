@@ -47,11 +47,11 @@ export default function Testimonials() {
             Testimonials
           </span>
           <h2 className="mt-3 text-3xl leading-tight tracking-tight md:text-5xl">
-            Find out why <span className="">500+</span> academies{" "}
+            Find out why <span className="">leading  </span>universities{" "}
             <span className="">trust</span> us
           </h2>
           <p className="mt-4 text-[15px] text-slate2">
-            Real stories from real academies who transformed their operations
+             real stories from real universities,who transformed their operations
           </p>
         </Reveal>
 

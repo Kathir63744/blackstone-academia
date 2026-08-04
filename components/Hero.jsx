@@ -34,21 +34,17 @@ export default function Hero() {
       <div className="relative mx-auto max-w-7xl">
         {/* Headline — animates in on page load, not on scroll */}
         <Reveal eager as="div" className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
-              <span className="eyebrow" />
-            </span>
-            Trusted by 500+ academies worldwide
-          </span>
+          
+
           <h1 className="mx-auto mt-5 max-w-3xl text-[2rem] leading-[1.12] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-            Run your <span className="">entire</span> academy
+            Run your <span className="">entire</span> university
             <br className="hidden sm:block" /> on{" "}
             <span className="">one</span> platform
           </h1>
-          <p className="mx-auto mt-4 max-w-xl px-2 text-sm leading-relaxed text-slate2 md:text-[15px]">
-            Live classes, trial sessions, invoicing, assessments and reports —
-            for students, teachers, coaches and admins in one system.
+          <p className="mx-auto mt-4 max-w-xl px-2 text-sm leading-relaxed text-slate-800 md:text-[15px]">
+            Manage admissions, academics, student life, faculty, finance, 
+            examinations, learning, research, and campus operations through 
+            one intelligent University Management Platform.
           </p>
         </Reveal>
 
@@ -106,21 +102,21 @@ export default function Hero() {
                 {/* value strip — bottom, key words highlighted */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 via-ink/40 to-transparent px-4 pb-3.5 pt-14 text-left text-white sm:px-5 sm:pb-4">
                   <p className="text-sm font-bold leading-snug sm:text-base md:text-lg">
-                    Every class{" "}
+                   Built to{" "}
                     <span className="rounded-md bg-ember/90 px-1.5 py-0.5">
-                      auto-recorded
-                    </span>
-                    , every seat{" "}
-                    <span className="rounded-md bg-white/25 px-1.5 py-0.5 backdrop-blur">
-                      invoice-ready
+                      Educate 
+                    </span>{" "}
+                    & Designed to{" "}
+                    <span className="rounded-md bg-ember/90 px-1.5 py-0.5">
+                      Elevate 
                     </span>
                   </p>
                   <div className="mt-2.5 flex flex-wrap items-center gap-1.5 sm:gap-2">
                     {[
-                      "Tajweed · Level 2",
+                      "Class",
                       "MS Teams",
-                      "→ SharePoint",
-                      "Attendance ✓",
+                      "SharePoint",
+                      "Attendance",
                     ].map((chip, i) => (
                       <span
                         key={chip}
@@ -138,21 +134,20 @@ export default function Hero() {
           </Reveal>
 
           {/* LEFT — quote from an academy, CTA. Generic valuable content */}
-          <Reveal eager delay={220} className="order-2 mx-auto max-w-[220px] text-center md:order-1">
-            <blockquote className="text-[10px] font-bold uppercase tracking-wider leading-relaxed text-ink/80 sm:text-[11px]">
-              &ldquo;Our enrollment doubled in just 4 months&rdquo;
+          <Reveal eager delay={220} className="order-2 flex flex-col items-center justify-center mx-auto max-w-[220px] text-center md:order-1">
+            <blockquote className="text-[14px] font-extrabold uppercase tracking-wider leading-relaxed text-ink/80 sm:text-[16px]">
+              &ldquo;Your journey to a fully digital campus starts here&rdquo;
             </blockquote>
-            <p className="mt-2.5 text-lg font-bold sm:text-xl">Academy Director</p>
-           
+            
             <Link
               href="/book-demo"
-              className="mt-5 inline-block rounded-full bg-ink px-5 py-2.5 text-[13px] font-semibold text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-ink/85 hover:shadow-soft sm:px-6 sm:py-3 sm:text-sm"
+              className="mt-5 inline-block rounded-full bg-ink px-6 py-3 text-[13px] font-semibold text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-ink/85 hover:shadow-soft sm:px-8 sm:py-3.5 sm:text-sm"
             >
               Book a free demo
             </Link>
           </Reveal>
 
-          {/* RIGHT — real avatars, stat, trust line. Updated with generic stats */}
+          {/* RIGHT — real avatars, stat, trust line. Generic valuable content */}
           <Reveal eager delay={300} className="order-3 mx-auto text-center">
             <div className="flex justify-center -space-x-2">
               {TRUSTED.map((src, i) => (
@@ -165,14 +160,14 @@ export default function Hero() {
                 />
               ))}
             </div>
-            <p className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-              50K+
+            <p className="mt-3 text-2xl font-semibold tracking-tight sm:text-2xl md:text-2xl">
+              Simplify
             </p>
             <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-slate2 sm:text-[10px]">
-              Students worldwide
+              Academy Operations
             </p>
-            <p className="mx-auto mt-4 max-w-[170px] text-[13px] font-semibold leading-relaxed text-ink sm:mt-6 sm:text-sm">
-              Trusted by academies globally
+            <p className="mx-auto mt-1 max-w-[170px] text-[13px] font-semibold leading-relaxed text-ink sm:mt-2 sm:text-sm">
+              For modern academies & institutions
             </p>
           </Reveal>
         </div>

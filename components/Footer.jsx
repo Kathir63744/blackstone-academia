@@ -73,8 +73,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate2">
-              The all-in-one platform for online academies — classes, billing, people and
-              progress in one place.
+              One intelligent platform for admissions, academics, finance, examinations, and campus management.designed to help universities operate smarter, collaborate better, and grow confidently.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">

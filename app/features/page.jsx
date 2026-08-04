@@ -115,24 +115,10 @@ function FeatureCard({ f, i }) {
               </li>
             ))}
           </ul>
-          {extra > 0 && (
-            <p className="mt-2.5 text-[11px] font-semibold text-slate-400">
-              +{extra} more capabilities
-            </p>
-          )}
+          
         </div>
 
-        {/* STATS */}
-        <div className="mt-4 grid grid-cols-3 divide-x divide-slate-200 rounded-xl bg-slate-50 py-2.5">
-          {f.highlights.map((h) => (
-            <div key={h.label} className="px-2 text-center">
-              <p className="text-[15px] font-bold leading-none text-slate-800">{h.value}</p>
-              <p className="mt-1 truncate text-[9px] font-semibold uppercase tracking-[0.1em] text-slate-400">
-                {h.label}
-              </p>
-            </div>
-          ))}
-        </div>
+
 
         {/* FOOTER — mt-auto pins it to the bottom of every card */}
         <div className="mt-auto flex items-center justify-between pt-4">
@@ -235,29 +221,6 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* PROOF STRIP */}
-      <section className="px-4 py-6">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-3 md:grid-cols-4">
-          {[
-            ["500+", "Academies"],
-            ["50K+", "Students"],
-            ["99.9%", "Uptime"],
-            ["24/7", "Support"],
-          ].map(([value, label]) => (
-            <div
-              key={label}
-              className="rounded-xl border border-sky-200/30 bg-white/80 p-4 text-center shadow-sm backdrop-blur"
-            >
-              <p className="text-2xl font-bold" style={{ color: ACCENT }}>
-                {value}
-              </p>
-              <p className="mt-0.5 text-[10px] font-medium uppercase tracking-wider text-slate-500">
-                {label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <section className="px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
