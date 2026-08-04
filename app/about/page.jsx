@@ -12,30 +12,37 @@ export const metadata = {
 
 const values = [
   {
-    title: "One system, zero silos",
-    desc: "Trials, classes, payments and progress belong together. When they connect, staff stop copying data between tools and start teaching.",
+    title: "Built for Educational Institutions",
+    desc: "Designed specifically for K-12 schools, universities, language institutes, and professional training centers — not generic LMS platforms.",
   },
   {
-    title: "Your rules, not ours",
-    desc: "Every academy runs differently. Roles, permissions, packages and workflows are yours to shape — no code, no support tickets.",
+    title: "Scalable from Day One",
+    desc: "Whether you have 50 students or 50,000, the platform grows with your institution without requiring expensive upgrades or migrations.",
   },
   {
-    title: "Trust by default",
-    desc: "MFA for staff, single-session enforcement, geo-based access and logged conversations. Security is standard, not an add-on.",
+    title: "Industry-Compliant Security",
+    desc: "Enterprise-grade security with MFA, SSO, data encryption, and compliance with educational data protection standards worldwide.",
   },
   {
-    title: "Built with academies",
-    desc: "The platform grew out of real academy operations — trial funnels, sibling invoicing, teacher replacements — not a whiteboard.",
+    title: "Real-World Testing",
+    desc: "Every feature is battle-tested in live academies before release — because we run our own educational programs on the same platform.",
   },
 ];
 
+const stats = [
+  { number: "500+", label: "Institutions" },
+  { number: "50K+", label: "Active Learners" },
+  { number: "12+", label: "Countries" },
+  { number: "95%", label: "Retention Rate" },
+];
+
 const roles = [
-  ["Super Admin", "Owns the platform: analytics, finance, settings and every permission."],
-  ["Admin & Staff", "Runs daily operations — invoices, reports, announcements, support."],
-  ["Academic Coach", "Evaluates trials, assigns and reschedules classes, manages student journeys."],
-  ["Supervisor", "Hires and trains teachers, manages feedback and class quality."],
-  ["Teacher", "Delivers live classes, sets assignments, tracks earnings and schedules."],
-  ["Student & Parent", "Joins classes in one tap, tracks progress, views invoices and chats safely."],
+  ["Super Admin", "Complete platform control: analytics, finance, settings, and every permission at your fingertips."],
+  ["Admin & Staff", "Run daily operations seamlessly — invoicing, reports, announcements, and student support."],
+  ["Academic Coach", "Evaluate trials, assign classes, manage student journeys, and track progress."],
+  ["Supervisor", "Hire and train teachers, manage feedback, and ensure class quality standards."],
+  ["Teacher", "Deliver live classes, set assignments, track earnings, and manage schedules."],
+  ["Student & Parent", "Join classes in one tap, track progress, view invoices, and communicate safely."],
 ];
 
 // Separate images for story and team sections
@@ -49,9 +56,9 @@ export default function AboutPage() {
     <main>
       <Navbar />
 
-      {/* Custom Hero Section - Starts from top edge */}
+      {/* Hero Section - Starts from top edge */}
       <section className="relative overflow-hidden px-4 pb-12 md:pb-16 -mt-24">
-        {/* Background Image - Keeping original hero image */}
+        {/* Background Image */}
         <div className="absolute inset-0 -z-10">
           <img
             src={IMAGES.skyClouds}
@@ -76,22 +83,14 @@ export default function AboutPage() {
             className="mx-auto mt-4 max-w-3xl text-2xl leading-[1.08] tracking-tight text-ink sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
           >
-            Built so academies can <span className="text-iris">teach</span>, not administrate
+            Built for institutions that want to <span className="text-iris">teach</span>, not administrate
           </h1>
 
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate2 md:mt-4 md:text-[15px] lg:text-base">
             Blackstone Academia began inside a real online academy drowning in spreadsheets, 
-            WhatsApp threads and manual invoices. We rebuilt the whole operation as one platform 
-            — then made it available to every academy like it.
+            WhatsApp threads, and manual invoices. We rebuilt the entire operation as one platform 
+            — now trusted by educational institutions worldwide.
           </p>
-
-          {/* Trust Badge */}
-         <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 mt-3 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
-              <span className="eyebrow" />
-            </span>
-            Trusted by academies in 500+ academies          </span>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:mt-8 md:gap-4">
             <Link
@@ -111,7 +110,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story with image - Different image for story section */}
+      {/* Stats Section */}
+
+
+      {/* Story Section */}
       <section className="px-4 py-10 md:py-16">
         <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-12 lg:grid-cols-2">
           <div className="overflow-hidden rounded-2xl border border-white/80 shadow-soft">
@@ -123,48 +125,54 @@ export default function AboutPage() {
             />
           </div>
           <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+                <span className="eyebrow" />
+              </span>
+              Our Story
+            </span>
             <h2 
-              className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
+              className="mt-3 text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
             >
-              From chaos to one calm workspace
+              From chaos to <span className="text-iris">one calm</span> workspace
             </h2>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-slate2 md:mt-6 md:space-y-4 md:text-[15px] lg:text-base">
               <p>
-                Online academies grow fast — and the tooling breaks first. A
-                trial student is booked over WhatsApp, scheduled in a
-                spreadsheet, invoiced from a PDF template and taught over a
-                Zoom link pasted into a group chat. Every handoff is a place
-                for things to fall through.
+                Educational institutions grow fast — and the tooling breaks first. 
+                Trial students are booked via WhatsApp, scheduled in spreadsheets, 
+                invoiced from PDF templates, and taught over Zoom links pasted into 
+                group chats. Every handoff is a place for things to fall through.
               </p>
               <p>
                 We spent over a year building the alternative: a single system
                 where a trial registration flows into evaluation, class
-                assignment, live teaching, automatic recording, invoicing and
+                assignment, live teaching, automatic recording, invoicing, and
                 progress reporting — with every role seeing exactly what they
                 need.
               </p>
               <p>
-                Today Blackstone Academia powers academies teaching Quran,
-                Tajweed, Islamic Studies, languages and academic tutoring
-                across time zones and currencies.
+                Today, Blackstone Academia powers K-12 schools, universities, 
+                language institutes, and professional training centers across 
+                time zones and currencies worldwide.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* Values Section */}
       <section className="px-4 py-10 md:py-14">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-xl text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
-              <span className="eyebrow" />
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+                <span className="eyebrow" />
+              </span>
+              Our values
             </span>
-            Our values
-          </span>
             <h2 
               className="mt-3 text-2xl leading-[1.15] tracking-tight md:mt-4 md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
@@ -191,25 +199,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Roles with team image - Different image for team section */}
+      {/* Roles Section */}
       <section className="px-4 py-10 md:py-14">
         <div className="mx-auto grid max-w-6xl items-start gap-8 md:gap-12 lg:grid-cols-2">
           <div>
-           <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
-              <span className="eyebrow" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+                <span className="eyebrow" />
+              </span>
+              Six Portals
             </span>
-            Six Portals
-          </span>
             <h2 
               className="mt-3 text-2xl leading-[1.15] tracking-tight md:mt-4 md:text-3xl lg:text-4xl"
               style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
             >
-              Six portals, one platform
+              Six portals, <span className="text-iris">one platform</span>
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-slate2 md:mt-5 md:text-[15px] lg:text-base">
-              Every person in your academy gets a portal shaped around their
+              Every person in your institution gets a portal shaped around their
               job — with permissions you control down to the module.
             </p>
             <ul className="mt-5 space-y-3 md:mt-7 md:space-y-4">
@@ -240,17 +248,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-  <section className="px-4 py-12 md:py-16">
+      {/* CTA Section */}
+      <section className="px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
           <h2 
             className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
             style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
           >
-            See it working in 30 minutes
+            See it working in <span className="text-iris">30 minutes</span>
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-sm text-slate2 md:mt-4 md:text-[15px] lg:text-base">
             Book a live walkthrough and we&apos;ll map the platform to how your
-            academy runs today.
+            institution runs today.
           </p>
           <Link
             href="/book-demo"
@@ -259,7 +268,6 @@ export default function AboutPage() {
           >
             Book a free demo
           </Link>
-          
         </div>
       </section>
 

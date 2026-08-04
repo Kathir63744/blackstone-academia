@@ -21,8 +21,6 @@ import {
   Users
 } from "lucide-react";
 
-/* Per-card `color` / `badgeColor` removed — every card now shares one scrim,
-   so the grid reads as a set instead of five unrelated components. */
 const industries = [
   {
     icon: <GraduationCap className="h-6 w-6" />,
@@ -146,9 +144,8 @@ export default function IndustryPage() {
         </div>
       </section>
 
-      {/* Industry Cards */}
+      {/* Industry Cards - 2 Column Grid with Same Size */}
       <section className="px-4 py-12 md:py-16 relative overflow-hidden">
-        {/* Background decoration */}
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90" />
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-1/2 w-96 h-96 bg-iris/5 rounded-full blur-3xl -translate-x-1/2" />
@@ -166,10 +163,11 @@ export default function IndustryPage() {
             </p>
           </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* 2 column grid with equal height cards */}
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             {industries.map((industry, i) => (
               <Reveal key={industry.title} delay={i * 60}>
-                <div className="group relative h-[440px] overflow-hidden rounded-[28px] ring-1 ring-ink/5 shadow-[0_18px_40px_-20px_rgba(15,23,42,0.45)] transition duration-500 hover:shadow-[0_30px_60px_-24px_rgba(15,23,42,0.55)] motion-safe:hover:-translate-y-2">
+                <div className="group relative h-[460px] overflow-hidden rounded-[28px] ring-1 ring-ink/5 shadow-[0_18px_40px_-20px_rgba(15,23,42,0.45)] transition duration-500 hover:shadow-[0_30px_60px_-24px_rgba(15,23,42,0.55)] motion-safe:hover:-translate-y-2">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
@@ -182,9 +180,7 @@ export default function IndustryPage() {
                     />
                   </div>
 
-                  {/* Overlay — identical on every card. Three passes: a flat
-                      knock-down so no photo is too bright, a bottom scrim that
-                      carries the text, and a soft top vignette for the badges. */}
+                  {/* Overlay */}
                   <div className="absolute inset-0 bg-ink/35 transition-colors duration-500 group-hover:bg-ink/25" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/75 via-45% to-transparent" />
                   <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-ink/55 to-transparent" />
@@ -217,8 +213,7 @@ export default function IndustryPage() {
                         {industry.description}
                       </p>
 
-                      {/* The features panel — a frosted plate lifts them off the
-                          photo entirely, so they stay legible on any image. */}
+                      {/* Features panel */}
                       <div className="mt-4 rounded-2xl bg-white/10 p-3.5 ring-1 ring-white/20 backdrop-blur-md transition duration-500 group-hover:bg-white/15 group-hover:ring-white/30">
                         <p className="mb-2.5 text-[9.5px] font-semibold uppercase tracking-[0.2em] text-white/55">
                           What&apos;s included
@@ -244,73 +239,71 @@ export default function IndustryPage() {
         </div>
       </section>
 
-     {/* Benefits Section */}
-<section className="px-4 py-12 md:py-16 relative overflow-hidden">
-  <div className="relative z-10 mx-auto max-w-6xl">
-    <Reveal className="mb-10 text-center">
-      <h2 className="font-display text-3xl tracking-tight text-ink md:text-4xl">
-        Why Institutions Choose Us
-      </h2>
-      <p className="mt-2 text-[15px] text-slate2">
-        The platform built for modern education
-      </p>
-    </Reveal>
+      {/* Benefits Section - 4 Column with Equal Height */}
+      <section className="px-4 py-12 md:py-16 relative overflow-hidden">
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <Reveal className="mb-10 text-center">
+            <h2 className="font-display text-3xl tracking-tight text-ink md:text-4xl">
+              Why Institutions Choose Us
+            </h2>
+            <p className="mt-2 text-[15px] text-slate2">
+              The platform built for modern education
+            </p>
+          </Reveal>
 
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {benefits.map((benefit, i) => (
-        <Reveal key={benefit.title} delay={i * 60}>
-          <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 border border-white/60 h-full flex flex-col">
-            {/* Glass shine effect */}
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
-            
-            <div className="relative z-10 flex flex-col h-full">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-iris/20 to-indigo-400/20 text-iris transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-iris/20">
-                {benefit.icon}
-              </div>
-              <h3 className="mt-4 font-display text-base font-medium text-ink">
-                {benefit.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate2/90 flex-1">
-                {benefit.description}
-              </p>
-            </div>
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {benefits.map((benefit, i) => (
+              <Reveal key={benefit.title} delay={i * 60}>
+                <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 border border-white/60 h-full flex flex-col min-h-[180px]">
+                  {/* Glass shine effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
+                  
+                  <div className="relative z-10 flex flex-col items-center justify-center h-full">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-iris/20 to-indigo-400/20 text-iris transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-iris/20">
+                      {benefit.icon}
+                    </div>
+                    <h3 className="mt-4 font-display text-base font-medium text-ink">
+                      {benefit.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate2/90">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
-<section className="px-4 py-12 md:py-16">
+      {/* CTA Section */}
+      <section className="px-4 py-12 md:py-16">
         <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
           <h2 
             className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
             style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}
           >
-            
- Ready to Transform Your Institution?
-
+            Ready to Transform Your Institution?
           </h2>
           <p className="mx-auto mt-3 max-w-lg text-sm text-slate2 md:mt-4 md:text-[15px] lg:text-base">
-           Join 1,000+ educational institutions already using Blackstone Academia.
+            Join 1,000+ educational institutions already using Blackstone Academia.
           </p>
-         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-                  <Link
-                    href="/book-demo"
-                    className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3 text-[15px] font-medium text-white shadow-lift transition hover:bg-iris motion-safe:hover:-translate-y-0.5"
-                  >
-                    Book a free demo
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                  </Link>
-                  <Link
-                    href="/features"
-                    className="group inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-7 py-3 text-[15px] font-medium text-ink transition hover:border-iris/40 hover:text-iris"
-                  >
-                    <Play className="h-4 w-4" />
-                    Explore modules
-                  </Link>
-                </div>
-          
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/book-demo"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3 text-[15px] font-medium text-white shadow-lift transition hover:bg-iris motion-safe:hover:-translate-y-0.5"
+            >
+              Book a free demo
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <Link
+              href="/features"
+              className="group inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-7 py-3 text-[15px] font-medium text-ink transition hover:border-iris/40 hover:text-iris"
+            >
+              <Play className="h-4 w-4" />
+              Explore modules
+            </Link>
+          </div>
         </div>
       </section>
 

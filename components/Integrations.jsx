@@ -191,67 +191,63 @@ export default function Integrations() {
           })}
         </div>
 
-        {/* Bottom Features - Highlighted Showcase with Sky-Blue to Peach to Black Gradient */}
-<Reveal delay={350} className="mt-12">
-  <div className="relative overflow-hidden rounded-2xl p-8 backdrop-blur-sm shadow-xl shadow-iris/10 border border-white/20 bg-gradient-to-br from-sky-400/20 via-peach-200/30 to-black/5">
-    {/* Background gradient layers */}
-
-    
-    
-    
-   
-    
+{/* Bottom Features - Highlighted Showcase with Sky-Blue to Peach to Black Gradient */}
+<Reveal delay={350} className="mt-10">
+  <div className="relative overflow-hidden rounded-xl p-6 backdrop-blur-sm shadow-lg shadow-iris/10 border border-white/20 bg-gradient-to-br from-sky-400/20 via-peach-200/30 to-black/5">
     <div className="relative z-10">
       {/* Header */}
-      <div className="text-center mb-8">
-      
-        <h3 className="mt-3 text-xl font-semibold text-ink">
+      <div className="text-center mb-6">
+        <h3 className="mt-2 text-lg font-semibold text-ink">
           Built-in security & communication tools
         </h3>
-        <p className="mt-1 text-sm text-slate2/80">
+        <p className="mt-1 text-xs text-slate2/80">
           Everything you need to keep your academy connected and secure
         </p>
       </div>
 
-      {/* Features Grid - All boxes same size */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="group flex flex-col items-center border-2 border-blue-200 justify-center gap-2 rounded-xl bg-white/30 backdrop-blur p-5 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-sky-400/20 hover:-translate-y-1  hover:border-sky-400/30 h-full min-h-[140px]">
-          <div className="rounded-full bg-gradient-to-br from-sky-400/30 to-sky-600/20 p-3 text-sky-600 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-sky-400/30">
-            <Shield className="h-6 w-6" />
+      {/* Features Grid - All 4 items with same peach color */}
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Item 1 - Peach */}
+        <div className="group flex flex-col items-center justify-center gap-1.5 rounded-lg bg-gradient-to-br from-peach-50/80 to-white/50 backdrop-blur p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-peach-300/30 hover:-translate-y-1 h-full min-h-[110px] border-2 border-peach-200 hover:border-peach-300/50">
+          <div className="rounded-full bg-gradient-to-br from-peach-300/40 to-peach-500/30 p-2.5 text-peach-600 transition-all duration-300 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-peach-300/30">
+            <Shield className="h-5 w-5" />
           </div>
           <div className="text-center">
-            <p className="text-sm font-semibold text-ink">SSO Integration</p>
-            <p className="text-xs text-slate2/70">Google & Apple</p>
+            <p className="text-md font-semibold text-ink">SSO Integration</p>
+            <p className="text-[14px] text-slate2/70">Google & Apple</p>
           </div>
         </div>
 
-        <div className="group flex flex-col border-2 border-blue-200 items-center justify-center gap-2 rounded-xl bg-white/30 backdrop-blur p-5 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-peach-300/20 hover:-translate-y-1  hover:border-peach-300/30 h-full min-h-[140px]">
-          <div className="rounded-full bg-gradient-to-br from-peach-300/30 to-peach-500/20 p-3 text-peach-600 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-peach-300/30">
-            <Mail className="h-6 w-6" />
+        {/* Item 2 - Peach */}
+        <div className="group flex flex-col items-center justify-center gap-1.5 rounded-lg bg-gradient-to-br from-peach-50/80 to-white/50 backdrop-blur p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-peach-300/30 hover:-translate-y-1 h-full min-h-[110px] border-2 border-peach-200 hover:border-peach-300/50">
+          <div className="rounded-full bg-gradient-to-br from-peach-300/40 to-peach-500/30 p-2.5 text-peach-600 transition-all duration-300 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-peach-300/30">
+            <Mail className="h-5 w-5" />
           </div>
           <div className="text-center">
-            <p className="text-sm font-semibold text-ink">Email Alerts</p>
-            <p className="text-xs text-slate2/70">Real-time notifications</p>
+            <p className="text-md font-semibold text-ink">Email Alerts</p>
+            <p className="text-[14px] text-slate2/80">Real-time notifications</p>
           </div>
         </div>
 
-        <div className="group flex flex-col items-center border-2 border-blue-200 justify-center gap-2 rounded-xl bg-white/30 backdrop-blur p-5 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-sky-400/20 hover:-translate-y-1  hover:border-sky-400/30 h-full min-h-[140px]">
-          <div className="rounded-full bg-gradient-to-br from-sky-400/30 to-sky-600/20 p-3 text-sky-600 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-sky-400/30">
-            <Smartphone className="h-6 w-6" />
+        {/* Item 3 - Peach */}
+        <div className="group flex flex-col items-center justify-center gap-1.5 rounded-lg bg-gradient-to-br from-peach-50/80 to-white/50 backdrop-blur p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-peach-300/30 hover:-translate-y-1 h-full min-h-[110px] border-2 border-peach-200 hover:border-peach-300/50">
+          <div className="rounded-full bg-gradient-to-br from-peach-300/40 to-peach-500/30 p-2.5 text-peach-600 transition-all duration-300 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-peach-300/30">
+            <Smartphone className="h-5 w-5" />
           </div>
           <div className="text-center">
-            <p className="text-sm font-semibold text-ink">SMS Alerts</p>
-            <p className="text-xs text-slate2/70">Instant updates</p>
+            <p className="text-md font-semibold text-ink">SMS Alerts</p>
+            <p className="text-[14px] text-slate2/80">Instant updates</p>
           </div>
         </div>
 
-        <div className="group flex flex-col items-center border-2 border-blue-200 justify-center gap-2 rounded-xl bg-white/30 backdrop-blur p-5 shadow-sm transition-all duration-300 hover:shadow-lg hover:shadow-peach-300/20 hover:-translate-y-1  border-white/10 hover:border-peach-300/10 h-full min-h-[140px]">
-          <div className="rounded-full bg-gradient-to-br from-peach-300/30 to-peach-500/20 p-3 text-peach-600 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-peach-300/30">
-            <Zap className="h-6 w-6" />
+        {/* Item 4 - Peach */}
+        <div className="group flex flex-col items-center justify-center gap-1.5 rounded-lg bg-gradient-to-br from-peach-50/80 to-white/50 backdrop-blur p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-peach-300/30 hover:-translate-y-1 h-full min-h-[110px] border-2 border-peach-200 hover:border-peach-300/50">
+          <div className="rounded-full bg-gradient-to-br from-peach-300/40 to-peach-500/30 p-2.5 text-peach-600 transition-all duration-300 group-hover:scale-110 group-hover:shadow-md group-hover:shadow-peach-300/30">
+            <Zap className="h-5 w-5" />
           </div>
           <div className="text-center">
-            <p className="text-sm font-semibold text-ink">2FA Security</p>
-            <p className="text-xs text-slate2/70">Two-factor authentication</p>
+            <p className="text-md font-semibold text-ink">2FA Security</p>
+            <p className="text-[14px] text-slate2/80">Two-factor authentication</p>
           </div>
         </div>
       </div>

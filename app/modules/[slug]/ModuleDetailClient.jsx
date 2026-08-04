@@ -161,21 +161,21 @@ export default function ModuleDetailClient({
     />
   )}
 
-  {/* Dark gradient overlay - more opaque and darker */}
-  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/95 via-black/60 via-40% to-transparent" />
+  {/* Bottom dark overlay - fully black at bottom */}
+  <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-t from-black via-black/90 via-20% via-black/60 via-50% via-black/20 via-80% to-transparent" />
 
-  {/* Content overlay with white text */}
-  <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-8">
-    <div className="flex flex-wrap items-end justify-between gap-4">
+  {/* Content overlay */}
+  <div className="absolute inset-x-0 bottom-0 z-10 p-4 md:p-6">
+    <div className="flex flex-wrap items-end justify-between gap-3">
       <div>
-        <h3 className="font-display text-2xl font-semibold text-white drop-shadow-lg md:text-3xl">
+        <h3 className="font-display text-xl font-semibold text-white [text-shadow:0_4px_20px_rgba(0,0,0,0.9)] md:text-2xl">
           {module_.title}
         </h3>
-        <p className="mt-1 max-w-2xl text-base text-white/90 drop-shadow-lg md:text-lg">
+        <p className="mt-1 max-w-2xl text-sm text-white/95 [text-shadow:0_2px_10px_rgba(0,0,0,0.9)] md:text-base">
           {module_.tagline}
         </p>
       </div>
-      <span className="flex items-center gap-2 rounded-full bg-black/40 px-3 py-1.5 text-xs text-white backdrop-blur-sm border border-white/20">
+      <span className="flex items-center gap-2 rounded-full bg-black/60 px-2.5 py-1 text-[10px] text-white backdrop-blur-sm border border-white/20 md:px-3 md:py-1.5 md:text-xs">
         <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-green-400" />
         {hasVideo ? "Video Demo" : "Coming Soon"}
       </span>
