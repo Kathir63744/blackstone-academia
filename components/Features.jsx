@@ -227,7 +227,7 @@ export default function Features() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
               <span className="eyebrow" />
             </span>
-            Our Features
+            Our Modules
           </span>
           <h2 className="mt-5 text-balance text-3xl font-light leading-[1.15] tracking-tight sm:text-4xl md:text-5xl">
             Everything to run &{" "}
@@ -247,17 +247,9 @@ export default function Features() {
 
         {/* ---------------- Modules: uniform grid ------------------------------ */}
         <div className="mt-16">
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h3 className="text-2xl font-semibold tracking-tight text-ink">Modules</h3>
-              <p className="mt-1 text-sm text-slate2">The core portals your academy runs on.</p>
-            </div>
-            <span
-              className="rounded-full px-3 py-1 text-sm font-medium"
-              style={{ backgroundColor: `${ACCENT}1A`, color: ACCENT }}
-            >
-              {modules.length} included
-            </span>
+          <div className=" flex flex-wrap items-end justify-between gap-4">
+            
+            
           </div>
 
           {/* Flex with a fixed basis so the last short row centers itself */}
@@ -281,8 +273,14 @@ export default function Features() {
             onKeyDown={onKeyDown}
           >
             <div className="mb-6 text-center">
-              <h3 className="text-2xl font-semibold tracking-tight text-ink">Features</h3>
-              <p className="mt-1 text-sm text-slate2">
+              <span className="inline-flex items-center mb-7 gap-2 rounded-full border border-ink/10 bg-white/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.22em] text-slate2 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-iris/70" />
+              <span className="eyebrow" />
+            </span>
+            Our Features
+          </span>
+              <p className="mt-1 text-md text-slate2">
                 Plays through on its own — hover to hold, or pick one.
               </p>
             </div>
