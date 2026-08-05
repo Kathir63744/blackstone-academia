@@ -93,7 +93,7 @@ export default function Hero() {
                 </svg>
               </span>
               <p className="text-[11px] font-bold uppercase leading-[1.5] tracking-[0.12em] text-iris">
-                All-in-One Academy
+                Intelligent Academic
                 <br />
                 Management Platform
               </p>
