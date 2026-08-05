@@ -109,7 +109,8 @@ export const metadata = {
 
 export default function IndustryPage() {
   return (
-    <main className="bg-gradient-to-b from-sky1/70 via-white to-sky1/50">
+    // CHANGED: Main background to sky-blue → white → cream vertical gradient
+    <main className="min-h-screen bg-gradient-to-b from-sky-100 via-white to-cream">
       <Navbar />
 
       {/* Hero Section */}
@@ -128,8 +129,8 @@ export default function IndustryPage() {
               Industry Solutions
             </span>
             <h1 className="mt-5 text-3xl leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl">
-  Solutions for Every Industry
-</h1>
+              Solutions for Every Industry
+            </h1>
             <p className="mt-3 max-w-2xl mx-auto text-[15px] leading-relaxed text-slate2 md:text-base">
               From online academies to professional training centers — 
               Blackstone Academia adapts to your unique educational needs.
@@ -155,13 +156,7 @@ export default function IndustryPage() {
 
       {/* Industry Cards - 2 Column Grid with Same Size */}
       <section className="px-4 py-12 md:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90" />
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-1/2 w-96 h-96 bg-iris/5 rounded-full blur-3xl -translate-x-1/2" />
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-sky1/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-iris/5 rounded-full blur-3xl" />
-        </div>
-        
+        {/* REMOVED: Dark overlay backgrounds - now transparent to show gradient */}
         <div className="relative z-10 mx-auto max-w-6xl">
           <Reveal className="mb-10 text-center">
             <h2 className="font-display text-3xl tracking-tight text-ink md:text-4xl">
@@ -249,6 +244,7 @@ export default function IndustryPage() {
       </section>
 
       {/* Benefits Section - 6 Column with Equal Height */}
+      {/* CHANGED: Removed bg classes, now transparent to show gradient */}
       <section className="px-4 py-12 md:py-16 relative overflow-hidden">
         <div className="relative z-10 mx-auto max-w-6xl">
           <Reveal className="mb-10 text-center">
@@ -263,7 +259,7 @@ export default function IndustryPage() {
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit, i) => (
               <Reveal key={benefit.title} delay={i * 60}>
-                <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-gradient-to-br from-sky1/90 via-white/90 to-cream/90 border border-white/60 h-full flex flex-col min-h-[180px]">
+                <div className="group relative rounded-2xl p-6 text-center shadow-lg shadow-black/5 transition duration-300 hover:shadow-xl hover:shadow-iris/10 motion-safe:hover:-translate-y-1 bg-white/80 backdrop-blur-sm border border-white/60 h-full flex flex-col min-h-[180px]">
                   {/* Glass shine effect */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none" />
                   
@@ -286,8 +282,9 @@ export default function IndustryPage() {
       </section>
 
       {/* CTA Section */}
+      {/* CHANGED: Removed bg-step-fade, now transparent to show gradient with slight white overlay */}
       <section className="px-4 py-12 md:py-16">
-        <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">
+        <div className="mx-auto max-w-7xl rounded-2xl bg-white/60 backdrop-blur-sm p-6 text-center shadow-soft md:p-10 lg:p-14 border border-white/40">
           <h2 
             className="text-2xl leading-[1.15] tracking-tight md:text-3xl lg:text-4xl"
             style={{ fontFamily: "'Onest', sans-serif", fontWeight: 400 }}

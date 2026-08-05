@@ -88,7 +88,7 @@ function FeatureCard({ f, i }) {
           {f.title}
         </h3>
 
-        <p className="mt-2 line-clamp-2 text-[13.5px] leading-relaxed text-slate-500">
+        <p className="mt-2 line-clamp-2 text-[13.5px] leading-relaxed text-slate-800">
           {f.summary}
         </p>
 
@@ -146,7 +146,7 @@ function FeatureCard({ f, i }) {
 
 export default function FeaturesPage() {
   return (
-    <main className="relative bg-gradient-to-br from-sky-50 via-white to-cream-50">
+    <main className="relative bg-gradient-to-b from-sky-100 via-white to-cream">
       <Navbar />
 
       {/* HERO */}

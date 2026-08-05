@@ -48,7 +48,7 @@ export default function Customization() {
   return (
     <section className="relative overflow-hidden px-4 py-11 md:py-14">
       <BackgroundAccent variant="grid" className="opacity-40" />
-      <Reveal className="mx-auto max-w-6xl rounded-2xl border border-white/80 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-shadow duration-500 hover:shadow-xl md:p-12">
+      <Reveal className="mx-auto max-w-[1250px] rounded-2xl border border-white/80 bg-white/80 p-8 shadow-lg backdrop-blur-sm transition-shadow duration-500 hover:shadow-xl md:p-12">
         <div className="grid items-start gap-12 md:grid-cols-2">
           {/* Left Column */}
           <div>

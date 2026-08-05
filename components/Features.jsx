@@ -214,7 +214,7 @@ export default function Features() {
   return (
     <section id="features" className="relative px-4 py-20 md:py-28">
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sky/60 via-transparent to-transparent" />
         <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-violet-400/10 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-violet-400/10 blur-3xl" />
       </div>

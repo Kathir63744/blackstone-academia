@@ -61,7 +61,7 @@ export default function AboutPage() {
             className="h-full w-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-sky1/55 to-cream" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-sky1/45 to-white/65" />
         </div>
 
         <div className="relative mx-auto max-w-4xl text-center pt-28 sm:pt-20 md:pt-28 lg:pt-32">
@@ -108,7 +108,7 @@ export default function AboutPage() {
 
 
       {/* Story Section */}
-      <section className="px-4 py-10 md:py-16">
+      <section className="px-4 bg-gradient-to-b from-slate-100 via-transparent to-transparent py-10 md:py-16">
         <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-12 lg:grid-cols-2">
           <div className="overflow-hidden rounded-2xl border border-white/80 shadow-soft">
             <img

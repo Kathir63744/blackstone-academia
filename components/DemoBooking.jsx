@@ -149,7 +149,7 @@ export default function DemoBooking() {
                   </label>
                   <input 
                     className={inputCls("name")} 
-                    placeholder="Ayesha Rahman" 
+                    placeholder="Enter Your Name" 
                     value={form.name} 
                     onChange={update("name")} 
                   />
@@ -163,7 +163,7 @@ export default function DemoBooking() {
                   <input 
                     type="email" 
                     className={inputCls("email")} 
-                    placeholder="you@academy.com" 
+                    placeholder="Enter Your Email" 
                     value={form.email} 
                     onChange={update("email")} 
                   />
@@ -180,7 +180,7 @@ export default function DemoBooking() {
                   </label>
                   <input 
                     className={inputCls("academy")} 
-                    placeholder="Noor Academy" 
+                    placeholder="Enter Your Academy Name" 
                     value={form.academy} 
                     onChange={update("academy")} 
                   />

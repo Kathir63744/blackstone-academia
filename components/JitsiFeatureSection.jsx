@@ -41,30 +41,21 @@ const JitsiFeatureSection = () => {
   ];
 
   const jitsiAdvantages = [
-    {
-      icon: <ShieldCheckIcon className="h-5 w-5" />,
-      title: "Open-source & security-audited",
-      description: "Transparent codebase regularly reviewed for vulnerabilities",
-    },
-    {
-      icon: <ServerIcon className="h-5 w-5" />,
-      title: "End-to-end encryption",
-      description: "Your conversations stay private and secure",
-    },
+   
     {
       icon: <GlobeAltIcon className="h-5 w-5" />,
-      title: "Self-hosted — data stays yours",
-      description: "Complete control over your data and infrastructure",
+      title: "Built In-House on Jitsi",
+      description: "Developed by our engineers on secure, open-source Jitsi — video, chat, and screen share fully integrated.",
     },
     {
       icon: <UserGroupIcon className="h-5 w-5" />,
-      title: "No peer-user license fees",
-      description: "Scalable without additional per-user costs",
+      title: "Zero Class Interruptions",
+      description: "Sessions run end to end, with no cutoffs or drops. Seamless learning experience.",
     },
     {
       icon: <DevicePhoneMobileIcon className="h-5 w-5" />,
-      title: "Browser-based — no installs",
-      description: "Access instantly from any device with a browser",
+      title: "Unlimited Class Duration",
+      description: "No hour limits — never run short of hours mid-lesson. Teach and learn without boundaries.",
     },
   ];
 
@@ -98,25 +89,9 @@ const JitsiFeatureSection = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-cream-50 py-20 px-6 sm:px-12 lg:px-24 2xl:px-32">
-      {/* Ambient field - light and airy */}
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute -top-32 left-1/4 h-96 w-96 rounded-full blur-[140px]"
-          style={{ backgroundColor: ACCENT, opacity: 0.15 }}
-        />
-        <div className="absolute -bottom-40 right-1/4 h-96 w-96 rounded-full bg-sky-200/20 blur-[140px]" />
-        <div
-          className="absolute inset-0 opacity-[0.08]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(110,147,224,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(110,147,224,0.08) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-            maskImage: "radial-gradient(ellipse at 50% 0%, #000 40%, transparent 75%)",
-            WebkitMaskImage: "radial-gradient(ellipse at 50% 0%, #000 40%, transparent 75%)",
-          }}
-        />
-      </div>
+    <section className="relative overflow-hidden bg-[#f2eee7]  py-20 px-6 sm:px-12 lg:px-24 2xl:px-32">
+      
+     
 
       <div className="relative mx-auto max-w-7xl">
         {/* Header */}
@@ -166,36 +141,7 @@ const JitsiFeatureSection = () => {
           </div>
         </div>
 
-        {/* Main Features Grid */}
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="group relative overflow-hidden rounded-3xl border border-sky-200/40 bg-white/70 p-8 backdrop-blur-sm shadow-lift transition duration-500 hover:border-sky-300/60 hover:bg-white/90 motion-safe:hover:-translate-y-1.5 hover:shadow-soft"
-            >
-              {/* corner glow on hover */}
-              <div
-                className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-30"
-                style={{ backgroundColor: ACCENT }}
-              />
-
-              <div className="relative flex items-start justify-between">
-                <div
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl text-sky-600 ring-1 ring-sky-200/40 transition-transform duration-500 group-hover:scale-105"
-                  style={{ background: `linear-gradient(140deg, ${ACCENT}22, rgba(255,255,255,0.6))` }}
-                >
-                  {feature.icon}
-                </div>
-                <span className="rounded-full border border-sky-200/40 bg-white/60 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
-                  {feature.tag}
-                </span>
-              </div>
-
-              <h3 className="relative mt-7 text-xl font-semibold text-slate-800">{feature.title}</h3>
-              <p className="relative mt-3 leading-relaxed text-slate-600">{feature.description}</p>
-            </div>
-          ))}
-        </div>
+       
 
         {/* Jitsi Advantage */}
         <div className="mt-8 overflow-hidden rounded-[32px] border border-sky-200/40 bg-white/60 shadow-lift">

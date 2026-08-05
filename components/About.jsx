@@ -38,8 +38,8 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="relative overflow-hidden px-4 py-20 md:py-28">
-      <BackgroundAccent variant="diagonal" />
+    <section id="about" className="relative bg-gradient-to-b from-slate-100 via-transparent to-transparent overflow-hidden px-4 py-20 md:py-28">
+      
 
       <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-2">
         {/* Photo card with feature grid */}
@@ -101,7 +101,7 @@ export default function About() {
               "Centralized finance and campus operations with online fee collection, HR & payroll, library, hostel, transport, and real-time analytics",
             ].map((item, i) => (
               <Reveal key={item} delay={200 + i * 70} as="li" className="flex items-start gap-3">
-                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-gradient-to-r from-iris to-indigo-500 text-[10px] text-iris shadow-sm shadow-iris/20">
+                <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full  text-[12px] text-iris shadow-sm shadow-iris/20">
                   ✓
                 </span>
                 <span className="text-sm leading-relaxed">{item}</span>

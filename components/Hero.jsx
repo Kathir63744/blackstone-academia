@@ -3,22 +3,47 @@ import { IMAGES } from "@/lib/siteData";
 import Reveal from "./Reveal";
 import BackgroundAccent from "./BackgroundAccent";
 
-// Real people thumbnails instead of plain color dots
 const PARTICIPANTS = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=60",
   "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=60",
   "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=60",
 ];
 
-const TRUSTED = [
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=60",
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=60",
+const CHECKS = ["Easy to start", "Quick to set up", "Built to grow with you"];
+
+const FEATURES = [
+ 
+  {
+    title: "Built-in Live Classes",
+    body: "Conduct interactive live sessions, share screens and engage in real-time.",
+    tile: "bg-teal-50 text-teal-600 ring-teal-100",
+    path: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z",
+  },
+  {
+    title: "Smart & Efficient",
+    body: "Automated workflows save time and reduce manual work.",
+    tile: "bg-orange-50 text-orange-500 ring-orange-100",
+    path: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z",
+  },
+  {
+    title: "Automate and Save Time",
+    body: "Automated invoices, attendences, reports and notifications",
+    tile: "bg-rose-50 text-rose-500 ring-rose-100",
+    path: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+  },
+   {
+    title: "Insights that Help You Grow",
+    body: "Get powerful insights and reports to make smarter decisions ",
+    tile: "bg-blue-50 text-blue-600 ring-blue-100",
+
+        path: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+  }
 ];
 
 export default function Hero() {
   return (
     <section className="relative -mt-24 overflow-hidden px-4 pb-16 pt-28 sm:pt-20 md:pt-28 lg:pt-32">
-      {/* Cloud photo background + pastel overlay */}
+      {/* Cloud photo background + pastel wash */}
       <div className="absolute inset-0 -z-10">
         <img
           src={IMAGES.skyClouds}
@@ -27,47 +52,127 @@ export default function Hero() {
           className="h-full w-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-sky1/50 to-cream/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-sky1/45 to-white/85" />
       </div>
-      <BackgroundAccent variant="diagonal" />
+      
 
       <div className="relative mx-auto max-w-7xl">
-        {/* Headline — animates in on page load, not on scroll */}
+        {/* ── Badge + headline ─────────────────────────────────────────── */}
         <Reveal eager as="div" className="text-center">
-          
-
-          <h1 className="mx-auto mt-5 max-w-3xl text-[2rem] leading-[1.12] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-            Run your <span className="">entire</span> university
-            <br className="hidden sm:block" /> on{" "}
-            <span className="">one</span> platform
+          <h1 className="mx-auto mt-6 text-3xl font-semibold leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
+            Run your entire academy
+            <br className="hidden sm:block" />{" "}
+            <span className="whitespace-nowrap">
+              on <span className="text-sky-600 font-semibold">one platform</span>
+            </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-xl px-2 text-sm leading-relaxed text-slate-800 md:text-[15px]">
-            Manage admissions, academics, student life, faculty, finance, 
-            examinations, learning, research, and campus operations through 
-            one intelligent University Management Platform.
+
+          <p className="mx-auto mt-5 max-w-2xl px-2 text-sm leading-relaxed text-slate-800 sm:text-base md:text-[17px]">
+          Manage admissions, academics, student life, faculty, finance, learning, and campus operations through one intelligent University Management Platform.
           </p>
         </Reveal>
 
-        {/* Composition: on mobile the frame leads, quote & stat share a row below;
-            on md+ it becomes the 3-column reference layout */}
-        <div className="mt-8 grid grid-cols-2 items-start gap-x-4 gap-y-6 sm:gap-y-8 md:mt-12 md:grid-cols-[1fr_3fr_1fr] md:gap-8 md:items-center">
-          {/* CENTER — extra-large live class frame.
-              The frame itself (border, padding, shadow) stays static on
-              hover — only the photo inside reacts, via its own overflow
-              container so the zoom/glow never bleeds past the image edge. */}
+        {/* ── Three-column composition ─────────────────────────────────── */}
+        {/* CHANGED: Center column is now bigger (2.5fr instead of 2.15fr) */}
+        <div className="mt-10 grid grid-cols-1 items-start gap-8 md:mt-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,2.5fr)_minmax(0,1.1fr)] lg:gap-10">
+          {/* LEFT — pitch, checklist, CTA */}
+          <Reveal
+            eager
+            delay={220}
+            className="order-2 mx-auto w-full max-w-sm lg:order-1 lg:mt-8 lg:max-w-none"
+          >
+            <div className="flex items-start gap-3">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-blue-600/10 text-sky-600">
+                <svg
+                  className="h-4.5 w-4.5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12 2l1.9 5.6L19.5 9.5 13.9 11.4 12 17l-1.9-5.6L4.5 9.5l5.6-1.9L12 2z" />
+                </svg>
+              </span>
+              <p className="text-[11px] font-bold uppercase leading-[1.5] tracking-[0.12em] text-iris">
+                All-in-One Academy
+                <br />
+                Management Platform
+              </p>
+            </div>
+
+            <h2 className="mt-6 text-2xl font-extrabold leading-tight text-ink sm:text-[1.7rem]">
+              Simplify today.
+              <br />
+              Scale tomorrow.
+            </h2>
+
+            <span
+              aria-hidden="true"
+              className="mt-4 block h-[3px] w-12 rounded-full bg-iris"
+            />
+
+            <ul className="mt-5 space-y-3">
+              {CHECKS.map((c) => (
+                <li key={c} className="flex items-center gap-3">
+                  <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-iris text-iris">
+                    <svg
+                      className="h-3 w-3"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={3.5}
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </span>
+                  <span className="text-[15px] font-medium text-slate-700">
+                    {c}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href="/book-demo"
+              className="group mt-14 inline-flex items-center gap-3 rounded-full bg-black py-3.5 pl-7 pr-3.5 text-[15px] font-semibold  text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-iris/90"
+            >
+              Book a free demo
+              <span className="grid h-8 w-8 place-items-center rounded-full bg-white/20 transition group-hover:translate-x-0.5">
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 12h14M13 6l6 6-6 6"
+                  />
+                </svg>
+              </span>
+            </Link>
+          </Reveal>
+
+          {/* CENTER — extra-large live class frame */}
+          {/* ADDED: max-w-4xl and larger padding for bigger frame */}
           <Reveal eager delay={120} y={32} className="col-span-2 order-1 md:order-2 md:col-span-1">
-            <div className="relative mx-auto w-full max-w-3xl rounded-3xl border border-white/80 bg-white/80 p-2 shadow-soft backdrop-blur sm:rounded-[2rem] sm:p-2.5">
+            <div className="relative mx-auto h-[450px] w-full max-w-4xl rounded-3xl border border-white/80 bg-white/80 p-3 shadow-soft backdrop-blur sm:rounded-[2rem] sm:p-3.5">
               <div className="group relative overflow-hidden rounded-[1.15rem] sm:rounded-[1.6rem]">
                 <img
                   src={IMAGES.heroClass}
                   alt="Student attending a live online class"
-                  className="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] sm:aspect-[16/9]"
+                  className="aspect-[18/14] h-[420px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] sm:aspect-[16/9]"
                   loading="eager"
                 />
 
-                {/* highlight confined to the image itself: a soft sheen
-                    that fades in on hover, clipped by the same overflow
-                    container as the photo — never touches the frame */}
+                {/* highlight confined to the image itself */}
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -96,10 +201,10 @@ export default function Hero() {
                 {/* live badge — top right */}
                 <span className="absolute right-3 top-3 flex items-center gap-1.5 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold text-ink shadow-lift backdrop-blur sm:right-4 sm:top-4 sm:px-3.5 sm:py-1.5 sm:text-xs">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-ember" />
-                  LIVE · 24:12
+                  LIVE
                 </span>
 
-                {/* value strip — bottom, key words highlighted */}
+                {/* value strip — bottom */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 via-ink/40 to-transparent px-4 pb-3.5 pt-14 text-left text-white sm:px-5 sm:pb-4">
                   <p className="text-sm font-bold leading-snug sm:text-base md:text-lg">
                    Built to{" "}
@@ -133,45 +238,71 @@ export default function Hero() {
             </div>
           </Reveal>
 
-          {/* LEFT — quote from an academy, CTA. Generic valuable content */}
-          <Reveal eager delay={220} className="order-2 flex flex-col items-center justify-center mx-auto max-w-[220px] text-center md:order-1">
-            <blockquote className="text-[14px] font-extrabold uppercase tracking-wider leading-relaxed text-ink/80 sm:text-[16px]">
-              &ldquo;Your journey to a fully digital campus starts here&rdquo;
-            </blockquote>
-            
-            <Link
-              href="/book-demo"
-              className="mt-5 inline-block rounded-full bg-ink px-6 py-3 text-[13px] font-semibold text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-ink/85 hover:shadow-soft sm:px-8 sm:py-3.5 sm:text-sm"
-            >
-              Book a free demo
-            </Link>
-          </Reveal>
+          {/* RIGHT — feature list + growth card */}
+          <Reveal
+            eager
+            delay={300}
+            className="order-3 mx-auto w-full max-w-sm lg:max-w-none"
+          >
+            <h2 className="text-xl font-extrabold leading-snug text-ink sm:text-[1.35rem]">
+              Everything you need,
+              <br />
+              is <span className="text-sky-600">Unified</span>.
+            </h2>
 
-          {/* RIGHT — real avatars, stat, trust line. Generic valuable content */}
-          <Reveal eager delay={300} className="order-3 mx-auto text-center">
-            <div className="flex justify-center -space-x-2">
-              {TRUSTED.map((src, i) => (
-                <img
-                  key={i}
-                  src={src}
-                  alt=""
-                  className="h-9 w-9 rounded-full border-2 border-white object-cover shadow-lift sm:h-10 sm:w-10"
-                  loading="lazy"
-                />
+            <ul className="mt-6 space-y-5">
+              {FEATURES.map((f) => (
+                <li key={f.title} className="flex items-start gap-3.5">
+                  <span
+                    className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ring-1 ${f.tile}`}
+                  >
+                    <svg
+                      className="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d={f.path}
+                      />
+                    </svg>
+                  </span>
+                  <div>
+                    <h3 className="text-[15px] font-bold text-ink">
+                      {f.title}
+                    </h3>
+                    <p className="mt-1 text-[13px] leading-relaxed text-slate-800">
+                      {f.body}
+                    </p>
+                  </div>
+                </li>
               ))}
-            </div>
-            <p className="mt-3 text-2xl font-semibold tracking-tight sm:text-2xl md:text-2xl">
-              Simplify
-            </p>
-            <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-slate2 sm:text-[10px]">
-              Academy Operations
-            </p>
-            <p className="mx-auto mt-1 max-w-[170px] text-[13px] font-semibold leading-relaxed text-ink sm:mt-2 sm:text-sm">
-              For modern academies & institutions
-            </p>
+            </ul>
           </Reveal>
         </div>
       </div>
+
+      {/* Marquee keyframes + edge fade for the word strip */}
+      <style>{`
+        @keyframes hero-marquee-scroll {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-50%); }
+        }
+        .hero-marquee {
+          animation: hero-marquee-scroll 22s linear infinite;
+        }
+        .mask-fade {
+          -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+                  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-marquee { animation: none; }
+        }
+      `}</style>
     </section>
   );
 }

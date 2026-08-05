@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import Plans from "@/components/Plans";
 import JitsiFeatureSection from "@/components/JitsiFeatureSection";
 import Link from "next/link";
+import RedisDatabaseSection from "@/components/DatabaseSection";
 
 
 export default function Home() {
@@ -23,11 +24,12 @@ export default function Home() {
       <Hero />
       <About />
       <Features />
-      <Customization />
+      
       <HowItWorks />
       <Integrations />
      <JitsiFeatureSection />
-      <Testimonials />
+     <RedisDatabaseSection />
+  <Customization />
     
       <section className="px-4 py-10 md:py-14">
         <div className="mx-auto max-w-7xl rounded-2xl bg-step-fade p-6 text-center shadow-soft md:p-10 lg:p-14">

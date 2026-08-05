@@ -5,19 +5,19 @@ const steps = [
   {
     n: "01",
     title: "Book your demo",
-    desc: "Pick a slot that suits you. We walk you through the platform on a live call — no slides, real product.",
+    desc: "Schedule a personalized demo with our experts and see how the platform fits your institution",
     icon: Calendar,
   },
   {
     n: "02",
     title: "Customize your workspace",
-    desc: "We help you set up roles, packages, courses and branding so the platform matches how your academy runs.",
+    desc: "Set up departments, programs, courses, calendars, roles and workflows that match your operations. ",
     icon: Settings,
   },
   {
     n: "03",
     title: "Go live with your academy",
-    desc: "Invite teachers and students, connect payments and video tools, and run your first live class the same week.",
+    desc: "Onboard faculty and students, manage classes, assessments, payments and communication -all in one place.",
     icon: Rocket,
   },
 ];
@@ -38,11 +38,11 @@ export default function HowItWorks() {
             className="mt-3 text-3xl leading-tight tracking-tight md:text-5xl"
             style={{ fontFamily: "'Onest', sans-serif", fontWeight: 500 }}
           >
-            Reduce admin Increase{" "}
-            <span className="">results</span>.
+            Your Journey to a {" "}
+            <span className="">Smarter Campus</span>.
           </h2>
           <p className="mt-4 text-sm text-slate2 md:text-base">
-            From first demo to first class in three steps.
+          We make every step simple , seamless and successful
           </p>
         </Reveal>
 

@@ -193,7 +193,7 @@ export default function Integrations() {
 
 {/* Bottom Features - Highlighted Showcase with Sky-Blue to Peach to Black Gradient */}
 <Reveal delay={350} className="mt-10">
-  <div className="relative overflow-hidden rounded-xl p-6 backdrop-blur-sm shadow-lg shadow-iris/10 border border-white/20 bg-gradient-to-br from-sky-400/20 via-peach-200/30 to-black/5">
+  <div className="relative overflow-hidden rounded-xl p-6 backdrop-blur-sm shadow-lg shadow-iris/10 border border-white/20 bg-white/50">
     <div className="relative z-10">
       {/* Header */}
       <div className="text-center mb-6">
